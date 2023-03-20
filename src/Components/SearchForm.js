@@ -8,6 +8,16 @@ const SearchForm = () => {
   };
   const submitHandler = (event) => {
     event.preventDefault();
+
+    const countryURL = `https://restcountries.com/v3.1/name/${countryValue}`;
+    fetch(countryURL)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("@@@@" + data);
+        throw new Error();
+      })
+      .catch((err) => console.log("###" + err));
+
     // Adding 2-way binding for countryValue
     setcountryValue("");
   };
