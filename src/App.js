@@ -1,6 +1,7 @@
 import "./App.css";
 import Title from "./Components/Title";
 import SearchForm from "./Components/SearchForm";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
@@ -9,22 +10,7 @@ function App() {
         <Title />
         <SearchForm />
       </main>
-      <code className="App-code">
-        <p>
-          Designed by{" "}
-          <span>
-            <a href="#" className="App-link">
-              @Blessing
-            </a>
-          </span>
-          {" || </> "}
-          <span>
-            <a href="#" className="App-link">
-              @Augustine
-            </a>
-          </span>
-        </p>
-      </code>
+      <Footer />
     </div>
   );
 }
