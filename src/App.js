@@ -23,19 +23,6 @@ function App() {
             </a>
           </span>
         </p>
-        {/* 
-        
-        Designed by{" "}
-        <a href="#" className="App-link">
-          @Blessing
-        </a>
-        ,{" </>"} by
-        {
-          <a href="#" className="App-link">
-            {" "}
-            Augustine
-          </a>
-        } */}
       </code>
     </div>
   );
