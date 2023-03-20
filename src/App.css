@@ -1,21 +1,31 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
-
+.App-main {
+  /* background-color: #282c34; */
+  background: #b0b0aa2a;
+  width: 40rem;
+  border-radius: 0.8rem;
+  padding: 1rem 2rem;
+  font-size: calc(10px + 2vmin);
+}
+.App-code {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0.3rem;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+  color: #fff;
+  background-color: #282c34;
+}
+.App-link {
+  color: #61dafb;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: grid;
-  place-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
 }
