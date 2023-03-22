@@ -12,6 +12,9 @@
 .App-link {
   color: #61dafb;
 }
+.App-empty-search_Error {
+  color: red;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
