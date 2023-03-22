@@ -9,13 +9,20 @@ const SearchForm = () => {
   const submitHandler = (event) => {
     event.preventDefault();
 
-    const countryURL = `https://restcountries.com/v3.1/name/${countryValue}`;
-    fetch(countryURL)
-      .then((response) => response.json())
-      .then((countryData) => {
-        console.log(countryData);
-      })
-      .catch((err) => console.log(err));
+    // checking if countryValue is not empty
+    if (!!countryValue) {
+      console.log("Fetching country Data...");
+
+      const countryURL = `https://restcountries.com/v3.1/name/${countryValue.trim()}`;
+      fetch(countryURL)
+        .then((response) => response.json())
+        .then((countryData) => {
+          console.log(countryData);
+        })
+        .catch((err) => console.log(err));
+    } else {
+      console.log("Oooops... Input can not be empty!!!");
+    }
 
     // Adding 2-way binding for countryValue
     setcountryValue("");
