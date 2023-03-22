@@ -12,11 +12,10 @@ const SearchForm = () => {
     const countryURL = `https://restcountries.com/v3.1/name/${countryValue}`;
     fetch(countryURL)
       .then((response) => response.json())
-      .then((data) => {
-        console.log("@@@@" + data);
-        throw new Error();
+      .then((countryData) => {
+        console.log(countryData);
       })
-      .catch((err) => console.log("###" + err));
+      .catch((err) => console.log(err));
 
     // Adding 2-way binding for countryValue
     setcountryValue("");
