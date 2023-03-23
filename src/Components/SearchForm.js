@@ -29,8 +29,11 @@ const SearchForm = (props) => {
         })
         .catch((err) => console.log(err));
     } else {
-      setErrorStatus((previous) => true);
-      props.onEmptyInput(errorStatus);
+      props.onEmptyInput(() => {
+        setErrorStatus(true);
+        return true;
+      });
+
       console.log("Oooops... Input can not be empty!!!");
     }
 
