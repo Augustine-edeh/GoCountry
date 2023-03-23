@@ -10,7 +10,7 @@
   font-size: calc(10px + 2vmin);
 }
 .App-link {
-  color: #61dafb;
+  color: red;
 }
 .App-empty-search_Error {
   color: red;
