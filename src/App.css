@@ -9,8 +9,8 @@
   padding: 1rem 2rem;
   font-size: calc(10px + 2vmin);
 }
-.App-link {
-  color: #61dafb;
+.App-empty-search_Error {
+  color: red;
 }
 .App-logo {
   height: 40vmin;

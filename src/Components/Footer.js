@@ -6,13 +6,13 @@ const Footer = () => {
       <p>
         Designed by{" "}
         <span>
-          <a href="https://twitter.com/Ble_etim" className="App-link">
+          <a href="https://twitter.com/Ble_etim" className="Footer-link">
             @Blessing
           </a>
         </span>
         {" || </> "}
         <span>
-          <a href="https://twitter.com/Augustine_edeh" className="App-link">
+          <a href="https://twitter.com/Augustine_edeh" className="Footer-link">
             @Augustine
           </a>
         </span>
