@@ -12,30 +12,23 @@ function App() {
     setErrStatus((previous) => status);
   };
 
-  if (errStatus) {
-    return (
-      <div className="App">
-        <Header />
-        <main className="App-main">
-          <Title />
-          <SearchForm onEmptyInput={emptyInputHandler} />
+  return (
+    <div className="App">
+      <Header />
+
+      <main className="App-main">
+        <Title />
+        <SearchForm onEmptyInput={emptyInputHandler} />
+        {errStatus ? (
           <p className="App-empty-search_Error">Please enter a country name</p>
-        </main>
-        <Footer />
-      </div>
-    );
-  } else {
-    return (
-      <div className="App">
-        <Header />
-        <main className="App-main">
-          <Title />
-          <SearchForm onEmptyInput={emptyInputHandler} />
-        </main>
-        <Footer />
-      </div>
-    );
-  }
+        ) : (
+          ""
+        )}
+      </main>
+
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
