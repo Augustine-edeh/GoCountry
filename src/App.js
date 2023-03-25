@@ -13,7 +13,21 @@ function App() {
   };
 
   const receiveCountryDataHandler = (countryData) => {
-    console.log(countryData);
+    const countryInfo = {
+      name: countryData[0].name.common,
+      flag: countryData[0].flags.flag,
+      map: countryData[0].maps.googleMaps,
+      // laguage: countryData[0].laguages[eng],
+      currency: countryData[0].currencies,
+      continent: countryData[0].continents,
+      subregion: countryData[0].subregion,
+      capital: countryData[0].capital,
+      borders: countryData[0].borders,
+      population: countryData[0].population,
+      startOfWeek: countryData[0].startOfWeek,
+    };
+    // console.log(countryData);
+    console.log(countryInfo);
   };
 
   return (
