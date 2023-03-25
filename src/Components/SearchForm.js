@@ -25,7 +25,8 @@ const SearchForm = (props) => {
       fetch(countryURL)
         .then((response) => response.json())
         .then((countryData) => {
-          console.log(countryData);
+          // console.log(countryData);
+          props.onReceiveCountryData(countryData);
         })
         .catch((err) => console.log(err));
     } else {
