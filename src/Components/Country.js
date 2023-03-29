@@ -66,7 +66,6 @@ const Country = (props) => {
       <button>&larr;B back</button>
 
       <div className="Country-flex">
-        <a href="https://\uD83C\uDDF3\uD83C\uDDEC" alt="country flag"></a>
         <img
           src="https://flagcdn.com/ng.svg"
           alt={`Flag of ${countryData.name.common}`}
