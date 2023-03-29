@@ -60,24 +60,108 @@ const Country = (props) => {
     capitalInfo: { latlng: [9.08, 7.53] },
   };
 
+  // const obj = countryData.currencies;
+  // var result = Object.keys(obj).map((key) => [key, Object.keys(obj[key])]);
+  // console.log(result[0][0]);
+  // console.log(result[0][1]);
+
   return (
     <div className="Country">
       {/* {false ? <p>Hey there!</p> : "Error"} */}
-      <button>&larr;B back</button>
+      <section className="Country-Header">
+        <button className="Country-BackButton">&larr; Back</button>
 
-      <div className="Country-flex">
+        <h1 className="Country-Name">
+          {countryData.name.common.toUpperCase()}
+        </h1>
+      </section>
+
+      <section className="Country-Flex">
         <img
           src="https://flagcdn.com/ng.svg"
           alt={`Flag of ${countryData.name.common}`}
           title={`The flag of ${countryData.name.common}`}
           srcSet=""
           // sizes="100px"
-          sizes="(max-width: 300px) 300px, (max-width: 768px) 768px, 1280px"
+          // sizes="(max-width: 300px) 300px, (max-width: 768px) 768px, 1280px"
           width={600}
-          // height={200}
+          // height={300}
         />
-      </div>
-      {countryData && <p>Hello</p>}
+
+        <div className="Country-Flex-Headline">
+          <div className="Flex-Headline-key">
+            <p className="flex-headline_items">CAPITAL</p>
+            <p className="flex-headline_items">Continent</p>
+            <p className="flex-headline_items">Sub region</p>
+          </div>
+          <div className="Flex-Headline-key">
+            <p className="flex-headline_items">:</p>
+            <p className="flex-headline_items">:</p>
+            <p className="flex-headline_items">:</p>
+          </div>
+
+          <div className="Flex-Headline-value">
+            <p className="flex-headline_items value">
+              &nbsp;
+              {countryData.capital}
+            </p>
+            <p className="flex-headline_items value">
+              &nbsp;{countryData.region}
+            </p>
+            <p className="flex-headline_items value">
+              &nbsp;{countryData.subregion}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="Country-Details">
+        {/* <p>CAPITAL: {countryData.capital}</p>
+        <p>Continent: {countryData.region}</p>
+        <p>Sub region: {countryData.subregion}</p> */}
+        <p>
+          Independence status:{" "}
+          {countryData.independent ? "Sovereign state" : "Non-Sovereign state"}
+        </p>
+        {/* <p>Currency: {countryData.currencies}</p> */}
+        <p>
+          Currency:{" "}
+          {String(
+            Object.entries(countryData.currencies)[0],
+            Object.entries(countryData.currencies)
+          )}
+        </p>
+        <p>
+          Calling code: {`${countryData.idd.root}${countryData.idd.suffixes}`}
+        </p>
+        <p>Languages: {countryData.languages.eng}</p>
+
+        <p>Capital: {countryData.capital}</p>
+        <p>Area: {countryData.area} Km&#xb2;</p>
+        <p>Demonym: {countryData.demonyms.eng.m}</p>
+        <p>
+          Map:{" "}
+          <a href={countryData.maps.googleMaps}>
+            Map of {countryData.name.common}
+          </a>
+        </p>
+        <p>
+          Population: {new Intl.NumberFormat().format(countryData.population)}
+        </p>
+
+        <p>
+          Start Of Week:{" "}
+          {countryData.startOfWeek.charAt(0).toUpperCase() +
+            countryData.startOfWeek.slice(1)}
+        </p>
+        <p>
+          Borders:{" "}
+          {countryData.borders.map((borderingCountry) => (
+            <button key={Math.random()}>{borderingCountry}</button>
+          ))}
+        </p>
+      </section>
+      {/* {countryData && <p>Hello</p>} */}
       {/* Continent: {JSON.stringify(props.countryInfo)} */}
       {/* Country Name: {JSON.stringify(props.countryInfo)}
       <br />

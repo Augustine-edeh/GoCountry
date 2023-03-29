@@ -1,0 +1,67 @@
+.Country {
+  /* background-color: red; */
+  /* padding: 1rem; */
+}
+.Country-Header {
+  /* background: red; */
+  /* display: flex; */
+  /* justify-content: space-between; */
+}
+.Country-BackButton {
+  /* width: 5rem; */
+  /* height: 3rem; */
+  /* font-size: 1rem; */
+  background-color: #000000;
+  color: #fff;
+  /* padding: 0.5rem; */
+  clip-path: polygon(0% 50%, 20% 0%, 100% 0%, 100% 100%, 20% 100%, 0% 50%);
+  border: none;
+}
+.Country-Name {
+  /* background-color: orange; */
+  text-align: center;
+  letter-spacing: 0.1rem;
+}
+.Country-Flex {
+  display: flex;
+  /* background-color: yellow; */
+  gap: 1rem;
+  align-items: center;
+  height: 300px;
+}
+.Country-Flex-Headline {
+  background: rgba(194, 200, 198, 0.328);
+  display: flex;
+  border-radius: 1rem;
+  padding: 0 0.7rem;
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  height: 85%;
+  gap: 0.5rem;
+}
+.Flex-Headline-key,
+.Flex-Headline-value {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.flex-headline_items {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  /* place-content: center; */
+  flex: 1;
+  /* background: green; */
+}
+.Flex-Headline-value {
+  /* display: flex;
+  align-items: start; */
+  /* text-align: left; */
+}
+.flex-headline_items.value {
+  /* text-align: right; */
+}
+.Country-Details {
+  /* background: blue; */
+  margin: 1.5rem 0;
+}
