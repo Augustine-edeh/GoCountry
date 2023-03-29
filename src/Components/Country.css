@@ -8,12 +8,15 @@
   /* justify-content: space-between; */
 }
 .Country-BackButton {
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
   /* width: 5rem; */
   /* height: 3rem; */
   /* font-size: 1rem; */
   background-color: #000000;
   color: #fff;
-  /* padding: 0.5rem; */
+  padding: 0.5rem;
   clip-path: polygon(0% 50%, 20% 0%, 100% 0%, 100% 100%, 20% 100%, 0% 50%);
   border: none;
 }
