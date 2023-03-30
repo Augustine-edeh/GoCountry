@@ -85,14 +85,14 @@ const Country = (props) => {
 
         <div className="Country-Flex-Headline">
           <div className="Flex-Headline-key">
-            <p className="flex-headline_items">CAPITAL</p>
-            <p className="flex-headline_items">Continent</p>
-            <p className="flex-headline_items">Sub region</p>
+            <p className="flex-headline_items bold">Capital</p>
+            <p className="flex-headline_items bold">Continent</p>
+            <p className="flex-headline_items bold">Sub region</p>
           </div>
           <div className="Flex-Headline-key">
-            <p className="flex-headline_items">:</p>
-            <p className="flex-headline_items">:</p>
-            <p className="flex-headline_items">:</p>
+            <p className="flex-headline_items bold">:</p>
+            <p className="flex-headline_items bold">:</p>
+            <p className="flex-headline_items bold">:</p>
           </div>
 
           <div className="Flex-Headline-value">
@@ -112,44 +112,75 @@ const Country = (props) => {
 
       <section className="Country-Details">
         <p>
-          Independence status:{" "}
-          {countryData.independent ? "Sovereign state" : "Non-Sovereign state"}
+          Independence status:
+          <span className="light-text">
+            {countryData.independent
+              ? "Sovereign state"
+              : "Non-Sovereign state"}
+          </span>
         </p>
         <p>
-          Currency:{" "}
-          {String(
-            Object.entries(countryData.currencies)[0],
-            Object.entries(countryData.currencies)
-          )}
+          Currency:
+          <span className="light-text">
+            {String(
+              Object.entries(countryData.currencies)[0],
+              Object.entries(countryData.currencies)
+            )}
+          </span>
         </p>
         <p>
-          Calling code: {`${countryData.idd.root}${countryData.idd.suffixes}`}
+          Calling code:
+          <span className="light-text">
+            {`${countryData.idd.root}${countryData.idd.suffixes}`}
+          </span>
         </p>
-        <p>Languages: {countryData.languages.eng}</p>
+        <p>
+          Languages:
+          <span className="light-text">{countryData.languages.eng}</span>
+        </p>
 
-        <p>Capital: {countryData.capital}</p>
-        <p>Area: {countryData.area} Km&#xb2;</p>
-        <p>Demonym: {countryData.demonyms.eng.m}</p>
         <p>
-          Map:{" "}
-          <a href={countryData.maps.googleMaps}>
-            Map of {countryData.name.common}
-          </a>
+          Capital:
+          <span className="light-text">{countryData.capital}</span>
         </p>
         <p>
-          Population: {new Intl.NumberFormat().format(countryData.population)}
+          Area:
+          <span className="light-text"></span>
+          {countryData.area} Km&#xb2;
+        </p>
+        <p>
+          Demonym:
+          <span className="light-text">{countryData.demonyms.eng.m}</span>
+        </p>
+        <p>
+          Map:
+          <span className="light-text">
+            <a href={countryData.maps.googleMaps}>
+              Map of {countryData.name.common}
+            </a>
+          </span>
+        </p>
+        <p>
+          Population:
+          <span className="light-text">
+            {new Intl.NumberFormat().format(countryData.population)}
+          </span>
         </p>
 
         <p>
-          Start Of Week:{" "}
-          {countryData.startOfWeek.charAt(0).toUpperCase() +
-            countryData.startOfWeek.slice(1)}
+          Start Of Week:
+          <span className="light-text">
+            {countryData.startOfWeek.charAt(0).toUpperCase() +
+              countryData.startOfWeek.slice(1)}
+          </span>
         </p>
         <p>
-          Borders:{" "}
-          {countryData.borders.map((borderingCountry) => (
-            <button key={Math.random()}>{borderingCountry}</button>
-          ))}
+          Borders:
+          <span className="light-text">
+            {countryData.borders.map((borderingCountry) => (
+              <button key={Math.random()}>{borderingCountry}</button>
+            ))}
+          </span>
         </p>
       </section>
     </div>

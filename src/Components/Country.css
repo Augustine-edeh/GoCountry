@@ -33,6 +33,13 @@
   height: 85%;
   gap: 0.5rem;
 }
+.value {
+  font-weight: 100;
+}
+.light-text {
+  font-weight: 100;
+  text-indent: 1rem;
+}
 .Flex-Headline-key,
 .Flex-Headline-value {
   display: flex;
