@@ -67,7 +67,6 @@ const Country = (props) => {
 
   return (
     <div className="Country">
-      {/* {false ? <p>Hey there!</p> : "Error"} */}
       <button className="Country-BackButton">&larr; Back</button>
       <section className="Country-Name_container">
         <h1 className="Country-Name slide-right">
@@ -81,10 +80,7 @@ const Country = (props) => {
           alt={`Flag of ${countryData.name.common}`}
           title={`The flag of ${countryData.name.common}`}
           srcSet=""
-          // sizes="100px"
-          // sizes="(max-width: 300px) 300px, (max-width: 768px) 768px, 1280px"
           width={600}
-          // height={300}
         />
 
         <div className="Country-Flex-Headline">
@@ -115,14 +111,10 @@ const Country = (props) => {
       </section>
 
       <section className="Country-Details">
-        {/* <p>CAPITAL: {countryData.capital}</p>
-        <p>Continent: {countryData.region}</p>
-        <p>Sub region: {countryData.subregion}</p> */}
         <p>
           Independence status:{" "}
           {countryData.independent ? "Sovereign state" : "Non-Sovereign state"}
         </p>
-        {/* <p>Currency: {countryData.currencies}</p> */}
         <p>
           Currency:{" "}
           {String(
@@ -160,21 +152,7 @@ const Country = (props) => {
           ))}
         </p>
       </section>
-      {/* {countryData && <p>Hello</p>} */}
-      {/* Continent: {JSON.stringify(props.countryInfo)} */}
-      {/* Country Name: {JSON.stringify(props.countryInfo)}
-      <br />
-      Country Name: {JSON.stringify(props.countryInfo)}
-      <br />
-      Country Name: {JSON.stringify(props.countryInfo)}
-      <br />
-      Country Name: {JSON.stringify(props.countryInfo)}
-      <br />
-      Country Name: {JSON.stringify(props.countryInfo)}
-      <br />
-      Country Name: {JSON.stringify(props.countryInfo)} */}
     </div>
   );
-  //   <p>This is the country Component</p>;
 };
 export default Country;
