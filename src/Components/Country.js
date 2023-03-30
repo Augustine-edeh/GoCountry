@@ -119,6 +119,23 @@ const Country = (props) => {
               : "Non-Sovereign state"}
           </span>
         </p>
+
+        <p>
+          Start Of Week:{" "}
+          <span className="light-text">
+            {countryData.startOfWeek.charAt(0).toUpperCase() +
+              countryData.startOfWeek.slice(1)}
+          </span>
+        </p>
+        <p>
+          Demonym:{" "}
+          <span className="light-text">{countryData.demonyms.eng.m}</span>
+        </p>
+
+        <p>
+          Languages:{" "}
+          <span className="light-text">{countryData.languages.eng}</span>
+        </p>
         <p>
           Currency:{" "}
           <span className="light-text">
@@ -134,29 +151,7 @@ const Country = (props) => {
             {`${countryData.idd.root}${countryData.idd.suffixes}`}
           </span>
         </p>
-        <p>
-          Languages:{" "}
-          <span className="light-text">{countryData.languages.eng}</span>
-        </p>
 
-        <p>
-          Capital: <span className="light-text">{countryData.capital}</span>
-        </p>
-        <p>
-          Area: <span className="light-text">{countryData.area} Km&#xb2;</span>
-        </p>
-        <p>
-          Demonym:{" "}
-          <span className="light-text">{countryData.demonyms.eng.m}</span>
-        </p>
-        <p>
-          Map:{" "}
-          <span className="light-text">
-            <a href={countryData.maps.googleMaps}>
-              Map of {countryData.name.common}
-            </a>
-          </span>
-        </p>
         <p>
           Population:{" "}
           <span className="light-text">
@@ -165,10 +160,15 @@ const Country = (props) => {
         </p>
 
         <p>
-          Start Of Week:{" "}
+          Area: <span className="light-text">{countryData.area} Km&#xb2;</span>
+        </p>
+
+        <p>
+          Map:{" "}
           <span className="light-text">
-            {countryData.startOfWeek.charAt(0).toUpperCase() +
-              countryData.startOfWeek.slice(1)}
+            <a href={countryData.maps.googleMaps}>
+              Map of {countryData.name.common}
+            </a>
           </span>
         </p>
         <p>
