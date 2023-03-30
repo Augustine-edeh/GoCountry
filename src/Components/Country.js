@@ -1,4 +1,5 @@
 import "./Country.css";
+import Border from "./Border";
 
 const Country = (props) => {
   // const countryInformationsReceived = props;
@@ -175,7 +176,7 @@ const Country = (props) => {
           Borders:{" "}
           <span className="light-text">
             {countryData.borders.map((borderingCountry) => (
-              <button key={Math.random()}>{borderingCountry}</button>
+              <Border key={Math.random()} border={borderingCountry} />
             ))}
           </span>
         </p>
