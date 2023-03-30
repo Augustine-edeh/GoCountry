@@ -11,12 +11,47 @@
 }
 .Country-Name_container {
   display: flex;
-  background: red;
+  background: #c2c8c654;
+  margin: 1rem 0 0.7rem 0;
+  border-radius: 1rem;
 }
 .Country-Name {
-  background-color: orange;
+  /* background-color: orange; */
   text-align: center;
 }
+.Country-Flex {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  height: 300px;
+}
+.Country-Flex-Headline {
+  background: #c2c8c654;
+  display: flex;
+  border-radius: 1rem;
+  padding: 0 0.7rem;
+  height: 85%;
+  gap: 0.5rem;
+}
+.Flex-Headline-key,
+.Flex-Headline-value {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.flex-headline_items {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.Flex-Headline-value {
+}
+.flex-headline_items.value {
+}
+.Country-Details {
+  margin: 1.5rem 0;
+}
+/* || ANIMATION */
 .slide-right {
   -webkit-animation: slide-right 0.9s ease-out 0.9s alternate both;
   animation: slide-right 0.9s ease 0.9s alternate both;
@@ -57,36 +92,4 @@
   100% {
     transform: translateX(calc(459% / 2));
   }
-}
-.Country-Flex {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  height: 300px;
-}
-.Country-Flex-Headline {
-  background: rgba(194, 200, 198, 0.328);
-  display: flex;
-  border-radius: 1rem;
-  padding: 0 0.7rem;
-  height: 85%;
-  gap: 0.5rem;
-}
-.Flex-Headline-key,
-.Flex-Headline-value {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-.flex-headline_items {
-  display: flex;
-  align-items: center;
-  flex: 1;
-}
-.Flex-Headline-value {
-}
-.flex-headline_items.value {
-}
-.Country-Details {
-  margin: 1.5rem 0;
 }
