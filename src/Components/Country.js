@@ -68,10 +68,9 @@ const Country = (props) => {
   return (
     <div className="Country">
       {/* {false ? <p>Hey there!</p> : "Error"} */}
-      <section className="Country-Header">
-        <button className="Country-BackButton">&larr; Back</button>
-
-        <h1 className="Country-Name">
+      <button className="Country-BackButton">&larr; Back</button>
+      <section className="Country-Name_container">
+        <h1 className="Country-Name slide-right">
           {countryData.name.common.toUpperCase()}
         </h1>
       </section>
