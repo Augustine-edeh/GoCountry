@@ -112,7 +112,7 @@ const Country = (props) => {
 
       <section className="Country-Details">
         <p>
-          Independence status:
+          Independence status:{" "}
           <span className="light-text">
             {countryData.independent
               ? "Sovereign state"
@@ -120,7 +120,7 @@ const Country = (props) => {
           </span>
         </p>
         <p>
-          Currency:
+          Currency:{" "}
           <span className="light-text">
             {String(
               Object.entries(countryData.currencies)[0],
@@ -129,31 +129,28 @@ const Country = (props) => {
           </span>
         </p>
         <p>
-          Calling code:
+          Calling code:{" "}
           <span className="light-text">
             {`${countryData.idd.root}${countryData.idd.suffixes}`}
           </span>
         </p>
         <p>
-          Languages:
+          Languages:{" "}
           <span className="light-text">{countryData.languages.eng}</span>
         </p>
 
         <p>
-          Capital:
-          <span className="light-text">{countryData.capital}</span>
+          Capital: <span className="light-text">{countryData.capital}</span>
         </p>
         <p>
-          Area:
-          <span className="light-text"></span>
-          {countryData.area} Km&#xb2;
+          Area: <span className="light-text">{countryData.area} Km&#xb2;</span>
         </p>
         <p>
-          Demonym:
+          Demonym:{" "}
           <span className="light-text">{countryData.demonyms.eng.m}</span>
         </p>
         <p>
-          Map:
+          Map:{" "}
           <span className="light-text">
             <a href={countryData.maps.googleMaps}>
               Map of {countryData.name.common}
@@ -161,21 +158,21 @@ const Country = (props) => {
           </span>
         </p>
         <p>
-          Population:
+          Population:{" "}
           <span className="light-text">
             {new Intl.NumberFormat().format(countryData.population)}
           </span>
         </p>
 
         <p>
-          Start Of Week:
+          Start Of Week:{" "}
           <span className="light-text">
             {countryData.startOfWeek.charAt(0).toUpperCase() +
               countryData.startOfWeek.slice(1)}
           </span>
         </p>
         <p>
-          Borders:
+          Borders:{" "}
           <span className="light-text">
             {countryData.borders.map((borderingCountry) => (
               <button key={Math.random()}>{borderingCountry}</button>
