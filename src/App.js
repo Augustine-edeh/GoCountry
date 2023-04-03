@@ -26,27 +26,28 @@ function App() {
     // console.log(countryInfo);
     // return countryInfo;
   };
-  useEffect(() => {
-    console.log("Inside Use Effect!");
-    setCountryInfo(Data);
-    console.log(countryInfo);
-  }, [Data]);
+  // useEffect(() => {
+  //   console.log("Inside Use Effect!");
+  //   setCountryInfo(Data);
+  //   console.log(countryInfo);
+  // }, [Data]);
 
   return (
     <div className="App">
       <Header />
 
       <main className="App-main">
-        {/* <Title />
+        <Title />
         <SearchForm
           onEmptyInput={emptyInputHandler}
           onReceiveCountryData={receiveCountryDataHandler}
         />
+
         {errStatus ? (
           <p className="App-empty-search_Error">Please enter a country name</p>
         ) : (
           ""
-        )} */}
+        )}
 
         {/* {countryInfo && <Country countryInfo={countryInfo} />} */}
 
