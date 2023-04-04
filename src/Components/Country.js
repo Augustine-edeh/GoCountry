@@ -1,11 +1,21 @@
 import "./Country.css";
 import Border from "./Border";
 
+// Importing the CountryInfo- context
+import CountryInfoContext from "../CountryInfoContext/CountryInfoContext";
+//  Importing useContext hook
+import { useContext } from "react";
+
 const Country = (props) => {
   // const countryInformationsReceived = props;
   // console.log(countryInformationsReceived);
 
-  const countryData = {
+  const { countryInfo } = useContext(CountryInfoContext);
+  console.log(countryInfo);
+
+  // const countryData = countryInfo;
+  const countryData = countryInfo[0];
+  const countryData_1 = {
     name: {
       common: "Nigeria",
       official: "Federal Republic of Nigeria",
@@ -77,7 +87,7 @@ const Country = (props) => {
 
       <section className="Country-Flex">
         <img
-          src="https://flagcdn.com/ng.svg"
+          src={`${countryData.flags.svg}`}
           alt={`Flag of ${countryData.name.common}`}
           title={`The flag of ${countryData.name.common}`}
           srcSet=""

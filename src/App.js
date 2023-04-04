@@ -6,6 +6,9 @@ import SearchForm from "./Components/SearchForm";
 import Footer from "./Components/Footer";
 import Country from "./Components/Country";
 
+// Importing the CountryInfo-Context-Provider
+import { CountryInfoProvider } from "./CountryInfoContext/CountryInfoContext";
+
 function App() {
   const [errStatus, setErrStatus] = useState(false);
   const [countryInfo, setCountryInfo] = useState([
@@ -38,20 +41,24 @@ function App() {
 
       <main className="App-main">
         <Title />
-        <SearchForm
-          onEmptyInput={emptyInputHandler}
-          onReceiveCountryData={receiveCountryDataHandler}
-        />
+        <CountryInfoProvider>
+          <SearchForm
+            onEmptyInput={emptyInputHandler}
+            onReceiveCountryData={receiveCountryDataHandler}
+          />
 
-        {errStatus ? (
-          <p className="App-empty-search_Error">Please enter a country name</p>
-        ) : (
-          ""
-        )}
+          {errStatus ? (
+            <p className="App-empty-search_Error">
+              Please enter a country name
+            </p>
+          ) : (
+            ""
+          )}
 
-        {/* {countryInfo && <Country countryInfo={countryInfo} />} */}
+          {/* {countryInfo && <Country countryInfo={countryInfo} />} */}
 
-        <Country />
+          <Country />
+        </CountryInfoProvider>
       </main>
 
       <Footer />
