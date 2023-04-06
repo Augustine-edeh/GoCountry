@@ -15,6 +15,18 @@ const Country = (props) => {
 
   // const countryData = countryInfo;
   const countryData = countryInfo[0];
+  const currency = `${countryData["currencies"]}`;
+  console.log(currency);
+
+  // for (const property in currency) {
+  //   console.log(`${property}`);
+  // }
+  let currencyString;
+  for (const property in countryData["currencies"]) {
+    console.log(countryData["currencies"][property]);
+    currencyString = `${property} (${countryData["currencies"][property].name}: ${countryData["currencies"][property].symbol})`;
+  }
+
   const countryData_1 = {
     name: {
       common: "Nigeria",
@@ -34,7 +46,6 @@ const Country = (props) => {
     independent: true,
     status: "officially-assigned",
     unMember: true,
-    currencies: { NGN: { name: "Nigerian naira", symbol: "₦" } },
     idd: { root: "+2", suffixes: ["34"] },
     capital: ["Abuja"],
     region: "Africa",
@@ -69,7 +80,15 @@ const Country = (props) => {
     },
     startOfWeek: "monday",
     capitalInfo: { latlng: [9.08, 7.53] },
+    currencies: { NGN: { name: "Nigerian naira", symbol: "₦" } },
   };
+
+  // for (const property in countryData_1["currencies"]) {
+  //   console.log(countryData_1["currencies"][property]);
+  //   console.log(
+  //     `${property} (${countryData_1["currencies"][property].name}: ${countryData_1["currencies"][property].symbol})`
+  //   );
+  // }
 
   // const obj = countryData.currencies;
   // var result = Object.keys(obj).map((key) => [key, Object.keys(obj[key])]);
@@ -148,13 +167,7 @@ const Country = (props) => {
           <span className="light-text">{countryData.languages.eng}</span>
         </p>
         <p>
-          Currency:{" "}
-          <span className="light-text">
-            {String(
-              Object.entries(countryData.currencies)[0],
-              Object.entries(countryData.currencies)
-            )}
-          </span>
+          Currency: <span className="light-text">{currencyString}</span>
         </p>
         <p>
           Calling code:{" "}
