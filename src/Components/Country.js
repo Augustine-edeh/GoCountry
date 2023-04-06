@@ -109,13 +109,16 @@ const Country = (props) => {
       </section>
 
       <section className="Country-Flex">
-        <img
-          src={`${countryData.flags.svg}`}
-          alt={`Flag of ${countryData.name.common}`}
-          title={`The flag of ${countryData.name.common}`}
-          srcSet=""
-          width={600}
-        />
+        <div className="flag-container">
+          <img
+            className="flag"
+            src={`${countryData.flags.svg}`}
+            alt={`Flag of ${countryData.name.common}`}
+            title={`The flag of ${countryData.name.common}`}
+            srcSet=""
+            // width={600}
+          />
+        </div>
 
         <div className="Country-Flex-Headline">
           <div className="Flex-Headline-key">
