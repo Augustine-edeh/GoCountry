@@ -18,6 +18,10 @@ const Country = (props) => {
   const currency = `${countryData["currencies"]}`;
   console.log(currency);
 
+  // creating border status
+  // const borderStatus = "borders" in countryData ? true : false;
+  // console.log(borderStatus);
+
   // for (const property in currency) {
   //   console.log(`${property}`);
   // }
@@ -201,9 +205,18 @@ const Country = (props) => {
         <p>
           Borders:{" "}
           <span className="light-text">
-            {countryData.borders.map((borderingCountry) => (
-              <Border key={Math.random()} border={borderingCountry} />
-            ))}
+            {
+              "borders" in countryData ? (
+                countryData.borders.map((borderingCountry) => (
+                  <Border key={Math.random()} border={borderingCountry} />
+                ))
+              ) : (
+                <Border key={Math.random()} border="None" />
+              )
+              // countryData.borders.map((borderingCountry) => (
+              //   <Border key={Math.random()} border={borderingCountry} />
+              // ))
+            }
           </span>
         </p>
       </section>
