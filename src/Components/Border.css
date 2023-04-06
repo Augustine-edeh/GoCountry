@@ -1,0 +1,6 @@
+.Border {
+  padding: 0.2rem 1rem;
+  margin: 0.2rem;
+  border-radius: 0.5rem;
+  border: 0.1rem solid #000;
+}

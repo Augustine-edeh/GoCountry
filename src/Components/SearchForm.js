@@ -1,8 +1,16 @@
 import { useState } from "react";
 import "./SearchForm.css";
 
+// Importing use-Context hook
+import { useContext } from "react";
+//  Importing the CountryInfo context
+import CountryInfoContext from "../CountryInfoContext/CountryInfoContext";
+
 const SearchForm = (props) => {
   const [countryValue, setcountryValue] = useState("");
+
+  // Importing the updateCountryInfo function
+  const { updateCountryInfo } = useContext(CountryInfoContext);
 
   const [errorStatus, setErrorStatus] = useState(false);
 
@@ -27,6 +35,9 @@ const SearchForm = (props) => {
         .then((countryData) => {
           // console.log(countryData);
           props.onReceiveCountryData(countryData);
+          console.log(countryData);
+          // Updating the country Information
+          updateCountryInfo(countryData);
         })
         .catch((err) => console.log(err));
     } else {
