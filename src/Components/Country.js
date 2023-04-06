@@ -184,7 +184,10 @@ const Country = (props) => {
         </p>
 
         <p>
-          Area: <span className="light-text">{countryData.area} Km&#xb2;</span>
+          Area:{" "}
+          <span className="light-text">
+            {new Intl.NumberFormat().format(countryData.area)}Km&#xb2;
+          </span>
         </p>
 
         <p>
