@@ -10,15 +10,15 @@ import Country from "./Components/Country";
 import { CountryInfoProvider } from "./CountryInfoContext/CountryInfoContext";
 
 function App() {
-  const [errStatus, setErrStatus] = useState(false);
+  // const [errStatus, setErrStatus] = useState(false);
   const [countryInfo, setCountryInfo] = useState([
     { name: "Nigeria" },
     { status: "Status; All good!" },
   ]);
   const [Data, setData] = useState();
-  const emptyInputHandler = (status) => {
-    setErrStatus((previous) => status);
-  };
+  // const emptyInputHandler = (status) => {
+  //   setErrStatus((previous) => status);
+  // };
 
   const receiveCountryDataHandler = (countryData) => {
     setData(countryData);
@@ -43,17 +43,17 @@ function App() {
         <Title />
         <CountryInfoProvider>
           <SearchForm
-            onEmptyInput={emptyInputHandler}
+            // onEmptyInput={emptyInputHandler}
             onReceiveCountryData={receiveCountryDataHandler}
           />
 
-          {errStatus ? (
+          {/* {errStatus ? (
             <p className="App-empty-search_Error">
               Please enter a country name
             </p>
           ) : (
             ""
-          )}
+          )} */}
 
           {/* {countryInfo && <Country countryInfo={countryInfo} />} */}
 

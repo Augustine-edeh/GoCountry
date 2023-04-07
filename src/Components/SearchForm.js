@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./SearchForm.css";
 
 // Importing use-Context hook
@@ -25,7 +25,7 @@ const SearchForm = (props) => {
     if (!!countryValue) {
       // Trying to set an error status and sending (lifting the errorStatus state to the App component) same error status to the App component
       setErrorStatus((previous) => false);
-      props.onEmptyInput(errorStatus);
+      // props.onEmptyInput(errorStatus);
 
       console.log("Fetching country Data...");
 
@@ -41,10 +41,11 @@ const SearchForm = (props) => {
         })
         .catch((err) => console.log(err));
     } else {
-      props.onEmptyInput(() => {
-        setErrorStatus(true);
-        return true;
-      });
+      setErrorStatus(true);
+      // props.onEmptyInput(() => {
+      // setErrorStatus(true);
+      // return true;
+      // });
 
       console.log("Oooops... Input can not be empty!!!");
     }
@@ -53,18 +54,25 @@ const SearchForm = (props) => {
     setcountryValue("");
   };
   return (
-    <form className="Form" onSubmit={submitHandler}>
-      <input
-        type="text"
-        className="Form-input"
-        placeholder="Enter country name"
-        value={countryValue}
-        onChange={changeHandler}
-      />
-      <button className="Form-button" type="submit">
-        Search
-      </button>
-    </form>
+    <>
+      <form className="Form" onSubmit={submitHandler}>
+        <input
+          type="text"
+          className="Form-input"
+          placeholder="Enter country name"
+          value={countryValue}
+          onChange={changeHandler}
+        />
+        <button className="Form-button" type="submit">
+          Search
+        </button>
+      </form>
+      {errorStatus ? (
+        <p className="App-empty-search_Error">Please enter a country name</p>
+      ) : (
+        ""
+      )}
+    </>
   );
 };
 export default SearchForm;
