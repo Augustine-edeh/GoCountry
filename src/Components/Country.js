@@ -18,6 +18,10 @@ const Country = (props) => {
   const currency = `${countryData["currencies"]}`;
   console.log(currency);
 
+  // creating border status
+  // const borderStatus = "borders" in countryData ? true : false;
+  // console.log(borderStatus);
+
   // for (const property in currency) {
   //   console.log(`${property}`);
   // }
@@ -105,13 +109,16 @@ const Country = (props) => {
       </section>
 
       <section className="Country-Flex">
-        <img
-          src={`${countryData.flags.svg}`}
-          alt={`Flag of ${countryData.name.common}`}
-          title={`The flag of ${countryData.name.common}`}
-          srcSet=""
-          width={600}
-        />
+        <div className="flag-container">
+          <img
+            className="flag"
+            src={`${countryData.flags.svg}`}
+            alt={`Flag of ${countryData.name.common}`}
+            title={`The flag of ${countryData.name.common}`}
+            srcSet=""
+            // width={600}
+          />
+        </div>
 
         <div className="Country-Flex-Headline">
           <div className="Flex-Headline-key">
@@ -184,7 +191,10 @@ const Country = (props) => {
         </p>
 
         <p>
-          Area: <span className="light-text">{countryData.area} Km&#xb2;</span>
+          Area:{" "}
+          <span className="light-text">
+            {new Intl.NumberFormat().format(countryData.area)}Km&#xb2;
+          </span>
         </p>
 
         <p>
@@ -198,9 +208,18 @@ const Country = (props) => {
         <p>
           Borders:{" "}
           <span className="light-text">
-            {countryData.borders.map((borderingCountry) => (
-              <Border key={Math.random()} border={borderingCountry} />
-            ))}
+            {
+              "borders" in countryData ? (
+                countryData.borders.map((borderingCountry) => (
+                  <Border key={Math.random()} border={borderingCountry} />
+                ))
+              ) : (
+                <Border key={Math.random()} border="None" />
+              )
+              // countryData.borders.map((borderingCountry) => (
+              //   <Border key={Math.random()} border={borderingCountry} />
+              // ))
+            }
           </span>
         </p>
       </section>
