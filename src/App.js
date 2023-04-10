@@ -12,6 +12,7 @@ import Title from "./Components/Title";
 import SearchForm from "./Components/SearchForm";
 import Footer from "./Components/Footer";
 import Country from "./Components/Country";
+import Page404 from "./Components/Page404";
 
 // Importing the CountryInfo-Context-Provider
 import { CountryInfoProvider } from "./CountryInfoContext/CountryInfoContext";
@@ -77,6 +78,8 @@ function App() {
               path="countries-search-app/country"
               element={<Country nation={countryInfo} />}
             />
+
+            <Route path="*" element={<Page404 />} />
           </Routes>
 
           {/* <Country /> */}
