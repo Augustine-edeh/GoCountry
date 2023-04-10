@@ -39,6 +39,14 @@ const SearchForm = (props) => {
           // props.onReceiveCountryData(countryData);
           console.log(countryData);
           console.log(countryValue);
+          console.log(
+            // Filtering the results array to match exact country  by country name searched
+            countryData.filter(
+              (country) =>
+                country.name.common.toLocaleLowerCase() ===
+                countryValue.toLocaleLowerCase()
+            )
+          );
           // Updating the country Information
           updateCountryInfo(countryData);
           // data = countryData;
