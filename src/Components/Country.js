@@ -1,3 +1,7 @@
+// COUNTRY.JS
+
+// Importing the router Link component
+import { Link } from "react-router-dom";
 import "./Country.css";
 import Border from "./Border";
 
@@ -9,6 +13,7 @@ import { useContext } from "react";
 const Country = (props) => {
   // const countryInformationsReceived = props;
   // console.log(countryInformationsReceived);
+  console.log(props.nation);
 
   const { countryInfo } = useContext(CountryInfoContext);
   console.log(countryInfo);
@@ -99,9 +104,13 @@ const Country = (props) => {
   // console.log(result[0][0]);
   // console.log(result[0][1]);
 
+  console.log(countryData);
+
   return (
     <div className="Country">
-      <button className="Country-BackButton">&larr; Back</button>
+      <Link to="/countries-search-app">
+        <button className="Country-BackButton">&larr; Back</button>
+      </Link>
       <section className="Country-Name_container">
         <h1 className="Country-Name slide-right">
           {countryData.name.common.toUpperCase()}

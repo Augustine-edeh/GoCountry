@@ -8,10 +8,12 @@ import CountryInfoContext from "../CountryInfoContext/CountryInfoContext";
 
 const SearchForm = (props) => {
   const [countryValue, setcountryValue] = useState("");
+  // let data;
 
   // Importing the updateCountryInfo function
   const { updateCountryInfo } = useContext(CountryInfoContext);
 
+  // FIXME: Reset the initial state value of errorStatus to an Empty Value
   const [errorStatus, setErrorStatus] = useState(false);
 
   const changeHandler = (event) => {
@@ -34,10 +36,12 @@ const SearchForm = (props) => {
         .then((response) => response.json())
         .then((countryData) => {
           // console.log(countryData);
-          props.onReceiveCountryData(countryData);
+          // props.onReceiveCountryData(countryData);
           console.log(countryData);
+          console.log(countryValue);
           // Updating the country Information
           updateCountryInfo(countryData);
+          // data = countryData;
         })
         .catch((err) => console.log(err));
     } else {
@@ -53,6 +57,10 @@ const SearchForm = (props) => {
     // Adding 2-way binding for countryValue
     setcountryValue("");
   };
+
+  // useEffect(() => {
+  //   updateCountryInfo(data);
+  // }, [countryInfo]);
   return (
     <>
       <form className="Form" onSubmit={submitHandler}>
