@@ -1,3 +1,10 @@
+// Importing the Routes & Route Components
+import { Routes, Route, Router } from "react-router-dom";
+// Importing useContext hook
+import { useContext } from "react";
+//  Importing the CountryInfo context
+import CountryInfoContext from "./CountryInfoContext/CountryInfoContext";
+
 import { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./Components/Header";
@@ -11,10 +18,14 @@ import { CountryInfoProvider } from "./CountryInfoContext/CountryInfoContext";
 
 function App() {
   // const [errStatus, setErrStatus] = useState(false);
-  const [countryInfo, setCountryInfo] = useState([
-    { name: "Nigeria" },
-    { status: "Status; All good!" },
-  ]);
+  // const [countryInfo, setCountryInfo] = useState([
+  //   { name: "Nigeria" },
+  //   { status: "Status; All good!" },
+  // ]);
+
+  const { countryInfo } = useContext(CountryInfoContext);
+  // console.log(countryInfo);
+
   const [Data, setData] = useState();
   // const emptyInputHandler = (status) => {
   //   setErrStatus((previous) => status);
@@ -42,10 +53,10 @@ function App() {
       <main className="App-main">
         <Title />
         <CountryInfoProvider>
-          <SearchForm
+          {/* <SearchForm
             // onEmptyInput={emptyInputHandler}
             onReceiveCountryData={receiveCountryDataHandler}
-          />
+          /> */}
 
           {/* {errStatus ? (
             <p className="App-empty-search_Error">
@@ -56,6 +67,10 @@ function App() {
           )} */}
 
           {/* {countryInfo && <Country countryInfo={countryInfo} />} */}
+
+          <Routes>
+            <Route path="countries-search-app/" element={<SearchForm />} />
+          </Routes>
 
           <Country />
         </CountryInfoProvider>
