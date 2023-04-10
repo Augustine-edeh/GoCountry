@@ -1,5 +1,5 @@
 // Importing the Routes & Route Components
-import { Routes, Route, Router } from "react-router-dom";
+import { Routes, Route, Link, Router } from "react-router-dom";
 // Importing useContext hook
 import { useContext } from "react";
 //  Importing the CountryInfo context
@@ -24,7 +24,7 @@ function App() {
   // ]);
 
   const { countryInfo } = useContext(CountryInfoContext);
-  // console.log(countryInfo);
+  console.log(countryInfo);
 
   const [Data, setData] = useState();
   // const emptyInputHandler = (status) => {
@@ -48,7 +48,9 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Link to="countries-search-app/">
+        <Header />
+      </Link>
 
       <main className="App-main">
         <Title />
