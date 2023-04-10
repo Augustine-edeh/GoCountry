@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./SearchForm.css";
+import { useNavigate } from "react-router-dom";
 
 // Importing use-Context hook
 import { useContext } from "react";
@@ -19,6 +20,8 @@ const SearchForm = (props) => {
   const changeHandler = (event) => {
     setcountryValue(event.target.value);
   };
+  // Assigning the useNavugate hook
+  const navigate = useNavigate();
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -49,6 +52,8 @@ const SearchForm = (props) => {
           );
           // Updating the country Information
           updateCountryInfo(countryData);
+          // Programmatically navigating to a result page (URL)
+          navigate("/countries-search-app/country");
           // data = countryData;
         })
         .catch((err) => console.log(err));
