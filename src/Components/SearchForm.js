@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./SearchForm.css";
 import { useNavigate } from "react-router-dom";
 
@@ -9,7 +9,6 @@ import CountryInfoContext from "../CountryInfoContext/CountryInfoContext";
 
 const SearchForm = (props) => {
   const [countryValue, setcountryValue] = useState("");
-  // let data;
 
   // Importing the updateCountryInfo function
   const { updateCountryInfo } = useContext(CountryInfoContext);
@@ -29,7 +28,6 @@ const SearchForm = (props) => {
     if (!!countryValue) {
       // Trying to set an error status and sending (lifting the errorStatus state to the App component) same error status to the App component
       setErrorStatus((previous) => false);
-      // props.onEmptyInput(errorStatus);
 
       console.log("Fetching country Data...");
 
@@ -37,10 +35,6 @@ const SearchForm = (props) => {
       fetch(countryURL)
         .then((response) => response.json())
         .then((countryData) => {
-          // console.log(countryData);
-          // props.onReceiveCountryData(countryData);
-          console.log(countryData);
-          console.log(countryValue);
           console.log(
             // Filtering the results array to match exact country  by country name searched
             countryData.filter(
@@ -49,20 +43,15 @@ const SearchForm = (props) => {
                 countryValue.toLocaleLowerCase()
             )
           );
-          // Updating the country Information
+          // Updating the countryInfo context
           updateCountryInfo(countryData);
           // Programmatically navigating to a result page (URL)
           navigate("/countries-search-app/country");
-          // data = countryData;
         })
         .catch((err) => console.log(err));
     } else {
       setErrorStatus(true);
-      // props.onEmptyInput(() => {
-      // setErrorStatus(true);
-      // return true;
-      // });
-
+      // FIXME: Remember to remove this particlar code
       console.log("Oooops... Input can not be empty!!!");
     }
 
@@ -70,9 +59,6 @@ const SearchForm = (props) => {
     setcountryValue("");
   };
 
-  // useEffect(() => {
-  //   updateCountryInfo(data);
-  // }, [countryInfo]);
   return (
     <>
       <form className="Form" onSubmit={submitHandler}>

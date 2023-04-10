@@ -1,5 +1,3 @@
-// INDEX.JS
-
 // Importing BrowserRouter
 import { BrowserRouter } from "react-router-dom";
 

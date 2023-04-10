@@ -1,11 +1,10 @@
 // Importing the Routes & Route Components
-import { Routes, Route, Link, Router } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 // Importing useContext hook
 import { useContext } from "react";
 //  Importing the CountryInfo context
 import CountryInfoContext from "./CountryInfoContext/CountryInfoContext";
 
-import { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./Components/Header";
 import Title from "./Components/Title";
@@ -18,34 +17,7 @@ import Page404 from "./Components/Page404";
 import { CountryInfoProvider } from "./CountryInfoContext/CountryInfoContext";
 
 function App() {
-  // const [errStatus, setErrStatus] = useState(false);
-  // const [countryInfo, setCountryInfo] = useState([
-  //   { name: "Nigeria" },
-  //   { status: "Status; All good!" },
-  // ]);
-
   const { countryInfo } = useContext(CountryInfoContext);
-  console.log(countryInfo);
-
-  const [Data, setData] = useState();
-  // const emptyInputHandler = (status) => {
-  //   setErrStatus((previous) => status);
-  // };
-
-  const receiveCountryDataHandler = (countryData) => {
-    setData(countryData);
-    // setCountryInfo((previous) => {
-    //   return { ...previous, countryData };
-    // });
-    // console.log(countryData);
-    // console.log(countryInfo);
-    // return countryInfo;
-  };
-  // useEffect(() => {
-  //   console.log("Inside Use Effect!");
-  //   setCountryInfo(Data);
-  //   console.log(countryInfo);
-  // }, [Data]);
 
   return (
     <div className="App">
@@ -56,21 +28,6 @@ function App() {
       <main className="App-main">
         <Title />
         <CountryInfoProvider>
-          {/* <SearchForm
-            // onEmptyInput={emptyInputHandler}
-            onReceiveCountryData={receiveCountryDataHandler}
-          /> */}
-
-          {/* {errStatus ? (
-            <p className="App-empty-search_Error">
-              Please enter a country name
-            </p>
-          ) : (
-            ""
-          )} */}
-
-          {/* {countryInfo && <Country countryInfo={countryInfo} />} */}
-
           <Routes>
             <Route path="countries-search-app/" element={<SearchForm />} />
 
@@ -81,8 +38,6 @@ function App() {
 
             <Route path="*" element={<Page404 />} />
           </Routes>
-
-          {/* <Country /> */}
         </CountryInfoProvider>
       </main>
 
