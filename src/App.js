@@ -70,9 +70,14 @@ function App() {
 
           <Routes>
             <Route path="countries-search-app/" element={<SearchForm />} />
+
+            <Route
+              path="countries-search-app/country"
+              element={<Country nation={countryInfo} />}
+            />
           </Routes>
 
-          <Country />
+          {/* <Country /> */}
         </CountryInfoProvider>
       </main>
 
