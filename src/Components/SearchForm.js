@@ -14,8 +14,7 @@ const SearchForm = (props) => {
   // Importing the updateCountryInfo function
   const { updateCountryInfo } = useContext(CountryInfoContext);
 
-  // FIXME: Reset the initial state value of errorStatus to an Empty Value
-  const [errorStatus, setErrorStatus] = useState(false);
+  const [errorStatus, setErrorStatus] = useState();
 
   const changeHandler = (event) => {
     setcountryValue(event.target.value);
