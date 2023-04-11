@@ -1,11 +1,7 @@
-.App {
-  /* text-align: center; */
-}
 .App-main {
   /* FIXME: Use this color for dark mode */
   /* background-color: #282c34; */
   background: #b0b0aa2a;
-  /* width: 40rem; */
   border-radius: 0.8rem;
   padding: 1rem 2rem;
   font-size: calc(10px + 2vmin);
