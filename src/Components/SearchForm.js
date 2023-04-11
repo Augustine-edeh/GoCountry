@@ -10,7 +10,7 @@ const SearchForm = (props) => {
   // IMPORTING THE updateCountryInfo UPDATER FUNCTION
   const { updateCountryInfo } = useContext(CountryInfoContext);
 
-  const [errorStatus, setErrorStatus] = useState();
+  const [isSearchInputEmpty, setIsSearchInputEmpty] = useState();
 
   const changeHandler = (event) => {
     setcountryValue(event.target.value);
@@ -23,8 +23,8 @@ const SearchForm = (props) => {
 
     // CHEECKING IF countryValue IS NOT EMPTY
     if (!!countryValue) {
-      // SETTING errorStatus TO FALSE
-      setErrorStatus((previous) => false);
+      // SETTING isSearchInputEmpty TO FALSE
+      setIsSearchInputEmpty((previous) => false);
 
       // console.log("Fetching country Data...");
 
@@ -47,7 +47,7 @@ const SearchForm = (props) => {
         })
         .catch((err) => console.log(err));
     } else {
-      setErrorStatus(true);
+      setIsSearchInputEmpty(true);
       // FIXME: Remember to remove this particlar code
       console.log("Oooops... Input can not be empty!!!");
     }
@@ -70,7 +70,7 @@ const SearchForm = (props) => {
           Search
         </button>
       </form>
-      {errorStatus ? (
+      {isSearchInputEmpty ? (
         <p className="App-empty-search_Error">Please enter a country name</p>
       ) : (
         ""
