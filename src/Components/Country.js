@@ -43,7 +43,7 @@ const Country = (props) => {
         <div className="Country-Flex-Headline">
           <div className="Flex-Headline-key">
             <p className="flex-headline_items bold">Capital</p>
-            <p className="flex-headline_items bold">Continent</p>
+            <p className="flex-headline_items bold">Region</p>
             <p className="flex-headline_items bold">Sub region</p>
           </div>
           <div className="Flex-Headline-key">
