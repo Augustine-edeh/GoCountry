@@ -1,7 +1,6 @@
-// Importing BrowserRouter
+// IMPORTING BrowserRouter COMPONENT
 import { BrowserRouter } from "react-router-dom";
-
-// Importing the CountryInfo-Context-Provider
+// IMPORTING THE CountryInfo-Context-Provider
 import { CountryInfoProvider } from "./CountryInfoContext/CountryInfoContext";
 
 import React from "react";

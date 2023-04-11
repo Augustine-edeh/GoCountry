@@ -10,7 +10,7 @@ const Footer = () => {
             @Blessing
           </a>
         </span>
-        {" || </> "}
+        {" || </> "} by{" "}
         <span>
           <a href="https://twitter.com/Augustine_edeh" className="Footer-link">
             @Augustine

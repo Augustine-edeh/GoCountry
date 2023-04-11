@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* Disabling User-select */
+  /* DISABLING USER-TEXT-SELECTION */
   -moz-user-select: none;
   -khtml-user-select: none;
   -webkit-user-select: none;
