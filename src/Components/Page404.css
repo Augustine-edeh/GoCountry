@@ -1,0 +1,13 @@
+.Page404 button {
+  display: grid;
+  padding: 0.7rem;
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  border-radius: 0.7rem;
+  outline: 0.1rem solid #000;
+  border: none;
+  /* margin: 0 auto; */
+}
+.Page404 a {
+  text-decoration: none;
+}

@@ -1,63 +1,43 @@
-import { useEffect, useState } from "react";
+// Importing the Routes & Route Components
+import { Routes, Route, Link } from "react-router-dom";
+// Importing useContext hook
+import { useContext } from "react";
+//  Importing the CountryInfo context
+import CountryInfoContext from "./CountryInfoContext/CountryInfoContext";
+
 import "./App.css";
 import Header from "./Components/Header";
 import Title from "./Components/Title";
 import SearchForm from "./Components/SearchForm";
 import Footer from "./Components/Footer";
 import Country from "./Components/Country";
+import Page404 from "./Components/Page404";
 
 // Importing the CountryInfo-Context-Provider
 import { CountryInfoProvider } from "./CountryInfoContext/CountryInfoContext";
 
 function App() {
-  const [errStatus, setErrStatus] = useState(false);
-  const [countryInfo, setCountryInfo] = useState([
-    { name: "Nigeria" },
-    { status: "Status; All good!" },
-  ]);
-  const [Data, setData] = useState();
-  const emptyInputHandler = (status) => {
-    setErrStatus((previous) => status);
-  };
-
-  const receiveCountryDataHandler = (countryData) => {
-    setData(countryData);
-    // setCountryInfo((previous) => {
-    //   return { ...previous, countryData };
-    // });
-    // console.log(countryData);
-    // console.log(countryInfo);
-    // return countryInfo;
-  };
-  // useEffect(() => {
-  //   console.log("Inside Use Effect!");
-  //   setCountryInfo(Data);
-  //   console.log(countryInfo);
-  // }, [Data]);
+  const { countryInfo } = useContext(CountryInfoContext);
 
   return (
     <div className="App">
-      <Header />
+      <Link to="countries-search-app/">
+        <Header />
+      </Link>
 
       <main className="App-main">
         <Title />
         <CountryInfoProvider>
-          <SearchForm
-            onEmptyInput={emptyInputHandler}
-            onReceiveCountryData={receiveCountryDataHandler}
-          />
+          <Routes>
+            <Route path="countries-search-app/" element={<SearchForm />} />
 
-          {errStatus ? (
-            <p className="App-empty-search_Error">
-              Please enter a country name
-            </p>
-          ) : (
-            ""
-          )}
+            <Route
+              path="countries-search-app/country"
+              element={<Country nation={countryInfo} />}
+            />
 
-          {/* {countryInfo && <Country countryInfo={countryInfo} />} */}
-
-          <Country />
+            <Route path="*" element={<Page404 />} />
+          </Routes>
         </CountryInfoProvider>
       </main>
 
