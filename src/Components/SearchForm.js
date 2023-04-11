@@ -32,14 +32,13 @@ const SearchForm = (props) => {
       fetch(countryURL)
         .then((response) => response.json())
         .then((countryData) => {
-          console.log(
-            // Filtering the results array to match exact country  by country name searched
-            countryData.filter(
+          if (countryData.length > 1) {
+            countryData = countryData.filter(
               (country) =>
                 country.name.common.toLocaleLowerCase() ===
                 countryValue.toLocaleLowerCase()
-            )
-          );
+            );
+          }
           // UPDATING THE countryInfo CONTEXT
           updateCountryInfo(countryData);
           // PROGRAMMATICALLY NAVIGATING TO THE RESULT PAGE
