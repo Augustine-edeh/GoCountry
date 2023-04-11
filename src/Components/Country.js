@@ -1,12 +1,10 @@
-// Importing the router Link component
 import { Link } from "react-router-dom";
+//  IMPORTING useContext HOOK
+import { useContext } from "react";
+// IMPORTING THE CountryInfo CONTEXT
+import CountryInfoContext from "../CountryInfoContext/CountryInfoContext";
 import "./Country.css";
 import Border from "./Border";
-
-// Importing the CountryInfo- context
-import CountryInfoContext from "../CountryInfoContext/CountryInfoContext";
-//  Importing useContext hook
-import { useContext } from "react";
 
 const Country = (props) => {
   console.log(props.nation);

@@ -1,20 +1,18 @@
-// Importing the Routes & Route Components
+// IMPORTING THE Routes & Route COMPONENTS
 import { Routes, Route, Link } from "react-router-dom";
-// Importing useContext hook
+// IMPORTING useContext HOOK
 import { useContext } from "react";
-//  Importing the CountryInfo context
+//  IMPORTING THE CountryInfo CONTEXT
 import CountryInfoContext from "./CountryInfoContext/CountryInfoContext";
-
+// IMPORTING THE CountryInfo-Context-Provider
+import { CountryInfoProvider } from "./CountryInfoContext/CountryInfoContext";
 import "./App.css";
-import Header from "./Components/Header";
 import Title from "./Components/Title";
-import SearchForm from "./Components/SearchForm";
+import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Country from "./Components/Country";
 import Page404 from "./Components/Page404";
-
-// Importing the CountryInfo-Context-Provider
-import { CountryInfoProvider } from "./CountryInfoContext/CountryInfoContext";
+import SearchForm from "./Components/SearchForm";
 
 function App() {
   const { countryInfo } = useContext(CountryInfoContext);

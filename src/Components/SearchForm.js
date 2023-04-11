@@ -1,16 +1,13 @@
-import { useState } from "react";
-import "./SearchForm.css";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-
-// Importing use-Context hook
-import { useContext } from "react";
-//  Importing the CountryInfo context
+//  IMPORTING THE CountryInfo CONTEXT
 import CountryInfoContext from "../CountryInfoContext/CountryInfoContext";
+import "./SearchForm.css";
 
 const SearchForm = (props) => {
   const [countryValue, setcountryValue] = useState("");
 
-  // Importing the updateCountryInfo function
+  // IMPORTING THE updateCountryInfo UPDATER FUNCTION
   const { updateCountryInfo } = useContext(CountryInfoContext);
 
   const [errorStatus, setErrorStatus] = useState();
@@ -18,18 +15,18 @@ const SearchForm = (props) => {
   const changeHandler = (event) => {
     setcountryValue(event.target.value);
   };
-  // Assigning the useNavugate hook
+  // ASSIGNING THE useNavugate HOOK
   const navigate = useNavigate();
 
   const submitHandler = (event) => {
     event.preventDefault();
 
-    // checking if countryValue is not empty
+    // CHEECKING IF countryValue IS NOT EMPTY
     if (!!countryValue) {
-      // Trying to set an error status and sending (lifting the errorStatus state to the App component) same error status to the App component
+      // SETTING errorStatus TO FALSE
       setErrorStatus((previous) => false);
 
-      console.log("Fetching country Data...");
+      // console.log("Fetching country Data...");
 
       const countryURL = `https://restcountries.com/v3.1/name/${countryValue.trim()}`;
       fetch(countryURL)
@@ -43,9 +40,9 @@ const SearchForm = (props) => {
                 countryValue.toLocaleLowerCase()
             )
           );
-          // Updating the countryInfo context
+          // UPDATING THE countryInfo CONTEXT
           updateCountryInfo(countryData);
-          // Programmatically navigating to a result page (URL)
+          // PROGRAMMATICALLY NAVIGATING TO THE RESULT PAGE
           navigate("/countries-search-app/country");
         })
         .catch((err) => console.log(err));
