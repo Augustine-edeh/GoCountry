@@ -99,7 +99,7 @@ const Country = (props) => {
         <p>
           Calling code:{" "}
           <span className="light-text">
-            {`${countryData.idd.root}${countryData.idd.suffixes}`}
+            {`${countryData.idd.root}${countryData.idd.suffixes[0]}`}
           </span>
         </p>
 
