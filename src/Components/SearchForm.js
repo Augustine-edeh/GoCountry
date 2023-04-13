@@ -51,7 +51,12 @@ const SearchForm = (props) => {
           // PROGRAMMATICALLY NAVIGATING TO THE RESULT PAGE
           navigate("/countries-search-app/country");
         })
-        .catch((err) => console.log(err));
+        .catch((error) => {
+          if (error.message === "Not Found") {
+            // If the country searched for is not correct/Not Found
+            console.log(`Country not found!`);
+          }
+        });
     } else {
       setIsSearchInputEmpty(true);
       // FIXME: Remember to remove this particlar code
