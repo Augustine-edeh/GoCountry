@@ -99,8 +99,6 @@ const SearchForm = (props) => {
         });
     } else {
       setIsSearchInputEmpty(true);
-      // FIXME: Remember to remove this particlar code
-      console.log("Oooops... Input can not be empty!!!");
     }
 
     // Adding 2-way binding for countryValue
