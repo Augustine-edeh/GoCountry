@@ -30,7 +30,14 @@ const SearchForm = (props) => {
 
       const countryURL = `https://restcountries.com/v3.1/name/${countryValue.trim()}`;
       fetch(countryURL)
-        .then((response) => response.json())
+        .then((response) => {
+          // Checking if response status is successful
+          if (!response.ok) {
+            // Throwing error if response status is not successful
+            throw Error(response.statusText);
+          }
+          return response.json();
+        })
         .then((countryData) => {
           if (countryData.length > 1) {
             countryData = countryData.filter(
