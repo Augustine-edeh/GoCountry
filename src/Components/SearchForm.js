@@ -57,10 +57,11 @@ const SearchForm = (props) => {
             console.log(`Country not found!`);
           } else if (error.message === "Failed to fetch") {
             // If user searches country without internet connectivity
-            // alert("No internet");
             console.error(
               `Please check your internet connection and try again`
             );
+          } else {
+            // Handle all other errors
           }
         });
     } else {
