@@ -30,22 +30,40 @@ const SearchForm = (props) => {
 
       const countryURL = `https://restcountries.com/v3.1/name/${countryValue.trim()}`;
       fetch(countryURL)
-        .then((response) => response.json())
+        .then((response) => {
+          // Checking if response status is successful
+          if (!response.ok) {
+            // Throwing error if response status is not successful
+            throw Error(response.statusText);
+          }
+          return response.json();
+        })
         .then((countryData) => {
-          console.log(
-            // Filtering the results array to match exact country  by country name searched
-            countryData.filter(
+          if (countryData.length > 1) {
+            countryData = countryData.filter(
               (country) =>
                 country.name.common.toLocaleLowerCase() ===
                 countryValue.toLocaleLowerCase()
-            )
-          );
+            );
+          }
           // UPDATING THE countryInfo CONTEXT
           updateCountryInfo(countryData);
           // PROGRAMMATICALLY NAVIGATING TO THE RESULT PAGE
           navigate("/countries-search-app/country");
         })
-        .catch((err) => console.log(err));
+        .catch((error) => {
+          if (error.message === "Not Found") {
+            // If the country searched for is not correct/Not Found
+            console.log(`Country not found!`);
+          } else if (error.message === "Failed to fetch") {
+            // If user searches country without internet connectivity
+            console.error(
+              `Please check your internet connection and try again`
+            );
+          } else {
+            // Handle all other errors
+          }
+        });
     } else {
       setIsSearchInputEmpty(true);
       // FIXME: Remember to remove this particlar code
