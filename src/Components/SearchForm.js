@@ -1,9 +1,8 @@
 import { useState, useContext } from "react";
-import { Route, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 //  IMPORTING THE CountryInfo CONTEXT
 import CountryInfoContext from "../CountryInfoContext/CountryInfoContext";
 import "./SearchForm.css";
-import HttpError from "../Components/HttpError";
 
 const SearchForm = (props) => {
   const [countryValue, setcountryValue] = useState("");
