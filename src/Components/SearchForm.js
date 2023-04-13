@@ -1,8 +1,9 @@
 import { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Route, useNavigate } from "react-router-dom";
 //  IMPORTING THE CountryInfo CONTEXT
 import CountryInfoContext from "../CountryInfoContext/CountryInfoContext";
 import "./SearchForm.css";
+import HttpError from "../Components/HttpError";
 
 const SearchForm = (props) => {
   const [countryValue, setcountryValue] = useState("");
@@ -52,16 +53,48 @@ const SearchForm = (props) => {
           navigate("/countries-search-app/country");
         })
         .catch((error) => {
+          let ErrorMessage;
           if (error.message === "Not Found") {
             // If the country searched for is not correct/Not Found
-            console.log(`Country not found!`);
+
+            ErrorMessage = (
+              <>
+                <h3 className="ErrorMessageTitle">Country not found</h3>
+                <p className="ErrorFixSuggestion">
+                  Please check country name entered and try again.
+                </p>
+              </>
+            );
+            props.changeErrorMessage(ErrorMessage);
+            navigate(`/countries-search-app/error`);
           } else if (error.message === "Failed to fetch") {
             // If user searches country without internet connectivity
+            ErrorMessage = (
+              <>
+                <h3 className="ErrorMessageTitle">Connectivity Error</h3>
+                <p className="ErrorFixSuggestion">
+                  Please check your internet connection and try again.
+                </p>
+              </>
+            );
+            props.changeErrorMessage(ErrorMessage);
+            navigate(`/countries-search-app/error`);
+            // Displaying an error message to console
             console.error(
               `Please check your internet connection and try again`
             );
           } else {
-            // Handle all other errors
+            // Handle all other error cases
+            ErrorMessage = (
+              <>
+                <h3 className="ErrorMessageTitle">Internal server Error</h3>
+                <p className="ErrorFixSuggestion">
+                  Not to worry, the error was from us. Please try again.
+                </p>
+              </>
+            );
+            props.changeErrorMessage(ErrorMessage);
+            navigate(`/countries-search-app/error`);
           }
         });
     } else {
