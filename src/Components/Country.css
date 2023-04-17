@@ -5,6 +5,7 @@
 .Country-BackButton {
   background-color: #000000;
   color: #fff;
+  margin-top: 1rem;
   padding: 0.5rem;
   clip-path: polygon(0% 50%, 20% 0%, 100% 0%, 100% 100%, 20% 100%, 0% 50%);
   border: none;
