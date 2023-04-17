@@ -6,3 +6,8 @@
   left: 0;
   font-size: calc(20px + 2vmin);
 }
+@media screen {
+  .Header {
+    margin: 1.5rem 0 0 1rem;
+  }
+}
