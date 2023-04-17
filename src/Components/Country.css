@@ -46,7 +46,6 @@
 }
 .light-text {
   font-weight: 100;
-  text-indent: 1rem;
 }
 .Flex-Headline-key,
 .Flex-Headline-value {
@@ -106,5 +105,35 @@
   }
   100% {
     transform: translateX(calc(459% / 2));
+  }
+}
+
+/* Mobile Responsiveness */
+@media only screen and (max-width: 768px) {
+  .Country {
+    width: 20rem;
+    margin-top: 0.5rem;
+  }
+  .Country-BackButton {
+    padding: 0.45rem;
+  }
+  .Country-Flex {
+    flex-direction: column;
+    gap: 0.7rem;
+    height: 18rem;
+    width: 19.5rem;
+    padding: 1rem 0;
+  }
+  .flag-container {
+    height: 150px;
+    width: 300px;
+  }
+  .Country-Flex-Headline {
+    background: #c2c8c654;
+    padding: 0.2rem 0.7rem;
+    gap: 1rem;
+  }
+  .Country-Details {
+    margin: 1rem 0;
   }
 }
