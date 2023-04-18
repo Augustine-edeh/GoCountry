@@ -25,7 +25,7 @@ const Country = (props) => {
       </Link>
       <section className="Country-Name_container">
         <h1 className="Country-Name slide-right">
-          {countryData.name.common.toUpperCase()}
+          <span>{countryData.name.common.toUpperCase()}</span>
         </h1>
       </section>
 
