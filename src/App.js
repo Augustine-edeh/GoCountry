@@ -21,7 +21,7 @@ function App() {
     <>
       <h3 className="ErrorMessageTitle">Error</h3>
       <p className="ErrorFixSuggestion">
-        Please reurn to the home page and try again.
+        We encountered an error. Please reurn to home page and try again.
       </p>
     </>
   );
