@@ -19,7 +19,10 @@ function App() {
   const { countryInfo } = useContext(CountryInfoContext);
   let error_ = (
     <>
-      <h3 className="ErrorMessageTitle">Error</h3>
+      <h3 className="ErrorMessageTitle">
+        <span className="Destop-warning">&#9888;</span> Error
+        <span className="Mobile-warning">&#9888;</span>
+      </h3>
       <p className="ErrorFixSuggestion">
         We encountered an error. Please reurn to home page and try again.
       </p>

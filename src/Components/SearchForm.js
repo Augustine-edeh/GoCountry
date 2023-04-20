@@ -58,7 +58,10 @@ const SearchForm = (props) => {
 
             ErrorMessage = (
               <>
-                <h3 className="ErrorMessageTitle">Country not found</h3>
+                <h3 className="ErrorMessageTitle">
+                  <span className="Destop-warning">&#9888;</span> Country not
+                  found <span className="Mobile-warning">&#9888;</span>
+                </h3>
                 <p className="ErrorFixSuggestion">
                   Please check country name entered and try again.
                 </p>
@@ -70,7 +73,10 @@ const SearchForm = (props) => {
             // If user searches country without internet connectivity
             ErrorMessage = (
               <>
-                <h3 className="ErrorMessageTitle">Connectivity Error</h3>
+                <h3 className="ErrorMessageTitle">
+                  <span className="Destop-warning">&#9888;</span> Connectivity
+                  Error <span className="Mobile-warning">&#9888;</span>
+                </h3>
                 <p className="ErrorFixSuggestion">
                   Please check your internet connection and try again.
                 </p>
@@ -86,7 +92,10 @@ const SearchForm = (props) => {
             // Handle all other error cases
             ErrorMessage = (
               <>
-                <h3 className="ErrorMessageTitle">Internal server Error</h3>
+                <h3 className="ErrorMessageTitle">
+                  <span className="Destop-warning">&#9888;</span> Internal
+                  server Error <span className="Mobile-warning">&#9888;</span>
+                </h3>
                 <p className="ErrorFixSuggestion">
                   Not to worry, the error was from us. Please try again.
                 </p>
