@@ -1,11 +1,20 @@
-.Country {
+.BackButton-container {
+  display: grid;
+  place-content: center;
+  margin-top: 1rem;
+  height: 2.3rem;
+  width: 4rem;
+  padding: 0.1rem;
+  text-decoration: none;
+  clip-path: polygon(0% 50%, 20% 0%, 100% 0%, 100% 100%, 20% 100%, 0% 50%);
 }
-.Country-Header {
+.BackButton-container:hover {
+  background: #b3aeae;
 }
 .Country-BackButton {
   background-color: #000000;
   color: #fff;
-  margin-top: 1rem;
+  display: flex;
   padding: 0.5rem;
   clip-path: polygon(0% 50%, 20% 0%, 100% 0%, 100% 100%, 20% 100%, 0% 50%);
   border: none;
@@ -16,8 +25,6 @@
   background: #c2c8c654;
   margin: 1rem 0 0.7rem 0;
   border-radius: 1rem;
-}
-.Country-Name {
 }
 .Country-Flex {
   display: flex;
@@ -58,10 +65,6 @@
   display: flex;
   align-items: center;
   flex: 1;
-}
-.Flex-Headline-value {
-}
-.flex-headline_items.value {
 }
 .Country-Details {
   margin: 1.5rem 0;
