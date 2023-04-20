@@ -39,4 +39,10 @@
     inline-size: 19.5rem;
     overflow: break-word;
   }
+  .ErrorMessageTitle .Destop-warning {
+    display: none;
+  }
+  .ErrorMessageTitle .Mobile-warning {
+    display: inline-block;
+  }
 }
