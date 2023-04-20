@@ -20,8 +20,10 @@ const Country = (props) => {
 
   return (
     <div className="Country">
-      <Link to="/countries-search-app">
-        <button className="Country-BackButton">&larr; Back</button>
+      <Link to="/countries-search-app" className="BackButton-container">
+        <button className="Country-BackButton">
+          <span>&larr;</span> Back
+        </button>
       </Link>
       <section className="Country-Name_container">
         <h1 className="Country-Name slide-right">
