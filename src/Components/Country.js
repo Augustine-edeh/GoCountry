@@ -7,8 +7,6 @@ import "./Country.css";
 import Border from "./Border";
 
 const Country = (props) => {
-  console.log(props.nation);
-
   const { countryInfo } = useContext(CountryInfoContext);
 
   const countryData = countryInfo[0];
@@ -22,7 +20,7 @@ const Country = (props) => {
     <div className="Country">
       <Link to="/countries-search-app" className="BackButton-container">
         <button className="Country-BackButton">
-          <span>&larr;</span> Back
+          <span>&larr;</span> <span>Back</span>
         </button>
       </Link>
       <section className="Country-Name_container">
