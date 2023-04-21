@@ -1,5 +1,5 @@
 .Header {
-  color: black;
+  color: var(--white-back);
   display: inline-block;
   margin: 1rem;
   position: fixed;
