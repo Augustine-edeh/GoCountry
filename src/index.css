@@ -1,3 +1,25 @@
+:root {
+  /* CSS HEX */
+  --function-keys: #52c9dcff;
+  --body-bg: #fff;
+  --numeric-keys: #f2f8fbff;
+  --calculator-container: #fff;
+  --border-top: #f4f9fc;
+  --alice-blue: #f2f8fbff;
+  --jet: #2f313cff;
+  --alice-blue-2: #f2f8fcff;
+  --white-back: #000;
+}
+
+.dark-theme {
+  --body-bg: #2f313cff;
+  --white-back: #fff;
+  --numeric-keys: #1e2435ff;
+  --calculator-container: #1a1b28ff;
+  --border-top: #1d2232;
+  /* CSS HEX */
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,6 +33,7 @@
 }
 
 body {
+  background-color: var(--body-bg);
   font-family: "Ubuntu";
   min-height: 100vh;
   display: grid;
