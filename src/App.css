@@ -13,3 +13,16 @@
   height: 40vmin;
   pointer-events: none;
 }
+.Theme-Toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  height: 2rem;
+  width: 2rem;
+  padding: 0.1rem;
+  background: rgba(128, 128, 128, 0.183);
+  /* background: white; */
+  border-radius: 0.25rem;
+  /* content: url("../public/moonIcon.png"); */
+  /* src: url("../public/moonIcon.png"); */
+}

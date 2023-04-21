@@ -31,7 +31,7 @@ export function CountryInfoProvider({ children }) {
       languages: { eng: "English" },
       latlng: [10.0, 8.0],
       landlocked: false,
-      borders: ["BEN", "CMR", "TCD", "NER", "aUGUSTINE"],
+      borders: ["BEN", "CMR", "TCD", "NER"],
       area: 923768.0,
       demonyms: {
         eng: { f: "Nigerian", m: "Nigerian" },
