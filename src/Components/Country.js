@@ -16,6 +16,13 @@ const Country = (props) => {
     currencyString = `${property} (${countryData["currencies"][property].name}: ${countryData["currencies"][property].symbol})`;
   }
 
+  // || COUNTRY LANGUAGE LOGIC
+  let languages = [];
+  for (const property in countryData["languages"]) {
+    languages.push(countryData["languages"][property]);
+  }
+  languages = languages.join(", ");
+
   return (
     <div className="Country">
       <Link to="/countries-search-app" className="BackButton-container">
@@ -90,8 +97,7 @@ const Country = (props) => {
         </p>
 
         <p>
-          Languages:{" "}
-          <span className="light-text">{countryData.languages.eng}</span>
+          Languages: <span className="light-text">{languages}</span>
         </p>
         <p>
           Currency: <span className="light-text">{currencyString}</span>
