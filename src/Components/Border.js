@@ -1,8 +1,40 @@
 import "./Border.css";
+import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+//  IMPORTING THE CountryInfo CONTEXT
+import CountryInfoContext from "../CountryInfoContext/CountryInfoContext";
 
 const Border = (props) => {
+  // IMPORTING THE updateCountryInfo UPDATER FUNCTION
+  const { updateCountryInfo } = useContext(CountryInfoContext);
+
+  // ASSIGNING THE useNavugate HOOK
+  const navigate = useNavigate();
+
+  const clickHandler = () => {
+    if (props.border !== "None") {
+      // console.log(props.border);
+
+      const borderURL = `https://restcountries.com/v3.1/alpha/${props.border}`;
+      fetch(borderURL)
+        .then((response) => {
+          // Checking if response status is successful
+          if (!response.ok) {
+            // Throwing error if response status is not successful
+            throw Error(response.statusText);
+          }
+          return response.json();
+        })
+        .then((countryData) => {
+          // UPDATING THE countryInfo CONTEXT
+          updateCountryInfo(countryData);
+          // PROGRAMMATICALLY NAVIGATING TO THE RESULT PAGE
+          navigate("/countries-search-app/country");
+        });
+    }
+  };
   return (
-    <button type="button" className="Border">
+    <button type="button" className="Border" onClick={clickHandler}>
       {props.border}
     </button>
   );
