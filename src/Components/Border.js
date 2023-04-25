@@ -23,6 +23,7 @@ const Border = (props) => {
             // Throwing error if response status is not successful
             throw Error(response.statusText);
           }
+          console.log("Yes!!");
           return response.json();
         })
         .then((countryData) => {
