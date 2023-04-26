@@ -1,23 +1,13 @@
 :root {
-  /* CSS HEX */
-  --function-keys: #52c9dcff;
+  /* CSS HEX FOR LIGHT THEME*/
   --body-bg: #fff;
-  --numeric-keys: #f2f8fbff;
-  --calculator-container: #fff;
-  --border-top: #f4f9fc;
-  --alice-blue: #f2f8fbff;
-  --jet: #2f313cff;
-  --alice-blue-2: #f2f8fcff;
   --white-back: #000;
 }
 
 .dark-theme {
+  /* CSS HEX  FOR DARK THEME*/
   --body-bg: #2f313cff;
   --white-back: #fff;
-  --numeric-keys: #1e2435ff;
-  --calculator-container: #1a1b28ff;
-  --border-top: #1d2232;
-  /* CSS HEX */
 }
 
 * {
