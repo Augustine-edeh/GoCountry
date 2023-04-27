@@ -26,9 +26,12 @@ const SearchForm = (props) => {
       // SETTING isSearchInputEmpty TO FALSE
       setIsSearchInputEmpty((previous) => false);
 
-      // console.log("Fetching country Data...");
+      // || FILTERING THE COUNTRY NAME ENTERED (TRIM AND REMOVE EVERY NON-ALPHABETIC CHARACTER EXCEPT WHITESPACES IN-BETWEEN WORDS)
+      const filteredCountryValue = countryValue
+        .trim()
+        .replaceAll(/[^a-zA-Z\s]/gi, "");
 
-      const countryURL = `https://restcountries.com/v3.1/name/${countryValue.trim()}`;
+      const countryURL = `https://restcountries.com/v3.1/name/${filteredCountryValue}`;
       fetch(countryURL)
         .then((response) => {
           // Checking if response status is successful
@@ -43,7 +46,7 @@ const SearchForm = (props) => {
             countryData = countryData.filter(
               (country) =>
                 country.name.common.toLocaleLowerCase() ===
-                countryValue.toLocaleLowerCase()
+                filteredCountryValue.toLocaleLowerCase()
             );
           }
           // UPDATING THE countryInfo CONTEXT
@@ -74,7 +77,7 @@ const SearchForm = (props) => {
             ErrorMessage = (
               <>
                 <h3 className="ErrorMessageTitle">
-                  <span className="Destop-warning">&#9888;</span> Connectivity
+                  <span className="Destop-war ning">&#9888;</span> Connectivity
                   Error <span className="Mobile-warning">&#9888;</span>
                 </h3>
                 <p className="ErrorFixSuggestion">
