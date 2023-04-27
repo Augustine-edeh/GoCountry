@@ -26,9 +26,19 @@ const SearchForm = (props) => {
       // SETTING isSearchInputEmpty TO FALSE
       setIsSearchInputEmpty((previous) => false);
 
-      // console.log("Fetching country Data...");
+      // || FILTERING THE COUNTRY NAME ENTERED (TRIM AND REMOVE EVERY NON-ALPHABETIC CHARACTER EXCEPT WHITESPACES IN-BETWEEN WORDS)
+      const filteredCountryValue = countryValue
+        .trim()
+        .replaceAll(/[^a-zA-Z\s]/gi, "");
 
-      const countryURL = `https://restcountries.com/v3.1/name/${countryValue.trim()}`;
+      // || CUSTOM ERROR-MESSAGE FUNCTION
+      function customErrorMessage(message = "") {
+        this.message = message;
+      }
+      customErrorMessage.prototype = new Error();
+
+      // || COUNTRY HTTP REQUEST CALL
+      const countryURL = `https://restcountries.com/v3.1/name/${filteredCountryValue}`;
       fetch(countryURL)
         .then((response) => {
           // Checking if response status is successful
@@ -39,12 +49,20 @@ const SearchForm = (props) => {
           return response.json();
         })
         .then((countryData) => {
+          // IF HTTP REQUEST RETURNS MORE THAN ONE DATA ARRAY
           if (countryData.length > 1) {
             countryData = countryData.filter(
               (country) =>
                 country.name.common.toLocaleLowerCase() ===
-                countryValue.toLocaleLowerCase()
+                filteredCountryValue.toLocaleLowerCase()
             );
+
+            // IF HTTP REQUEST RETURNS MORE THAN ONE DATA ARRAY AND NONE MATCHES A COMMON NAME AS THE COUNTRY NAME ENTERED BY THE USER
+            if (!countryData.length) {
+              throw new customErrorMessage({
+                message: "Country Name not specific",
+              });
+            }
           }
           // UPDATING THE countryInfo CONTEXT
           updateCountryInfo(countryData);
@@ -53,9 +71,9 @@ const SearchForm = (props) => {
         })
         .catch((error) => {
           let ErrorMessage;
+          // console.log(error.message);
           if (error.message === "Not Found") {
             // If the country searched for is not correct/Not Found
-
             ErrorMessage = (
               <>
                 <h3 className="ErrorMessageTitle">
@@ -88,6 +106,20 @@ const SearchForm = (props) => {
             console.error(
               `Please check your internet connection and try again`
             );
+          } else if (error instanceof customErrorMessage) {
+            ErrorMessage = (
+              <>
+                <h3 className="ErrorMessageTitle">
+                  <span className="Destop-warning">&#9888;</span> Unspecific
+                  Country Name <span className="Mobile-warning">&#9888;</span>
+                </h3>
+                <p className="ErrorFixSuggestion">
+                  Please try again with a more specific country name.
+                </p>
+              </>
+            );
+            props.changeErrorMessage(ErrorMessage);
+            navigate(`/countries-search-app/error`);
           } else {
             // Handle all other error cases
             ErrorMessage = (
