@@ -23,8 +23,7 @@
   border-radius: 0.5rem;
   flex: 1;
 }
-
-@media only screen and (max-width: 768px) {
+@media (max-width: 768px) {
   .Form {
     flex-direction: column;
     margin: 3rem 0 1.5rem 0;
@@ -45,5 +44,11 @@
     width: 100%;
     padding: 0.55rem 0;
     font-weight: bold;
+  }
+}
+/* || MINIMUM WIDTH SETTING FOR MOBILE DEVICE */
+@media (min-width: 300px) and (max-width: 411px) {
+  .Form {
+    width: 19.42rem;
   }
 }
