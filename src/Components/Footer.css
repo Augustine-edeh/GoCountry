@@ -14,3 +14,9 @@
 .Footer-link {
   color: #61dafb;
 }
+
+@media (min-width: 300px) and (max-width: 405px) {
+  .Footer {
+    font-size: 0.96rem;
+  }
+}
