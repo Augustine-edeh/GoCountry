@@ -62,7 +62,7 @@ const Country = (props) => {
           <div className="Flex-Headline-value">
             <p className="flex-headline_items value">
               &nbsp;
-              {countryData.capital}
+              {countryData.capital.join(", ")}
             </p>
             <p className="flex-headline_items value">
               &nbsp;{countryData.region}
