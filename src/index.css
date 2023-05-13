@@ -1,13 +1,13 @@
 :root {
   /* CSS HEX FOR LIGHT THEME*/
   --body-bg: #fff;
-  --white-back: #000;
+  --white-black: #000;
 }
 
 .dark-theme {
   /* CSS HEX  FOR DARK THEME*/
   --body-bg: #2f313cff;
-  --white-back: #fff;
+  --white-black: #fff;
 }
 
 * {
