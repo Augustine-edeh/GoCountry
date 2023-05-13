@@ -1,3 +1,6 @@
+.Country {
+  color: var(--white-back);
+}
 .BackButton-container {
   display: grid;
   place-content: center;

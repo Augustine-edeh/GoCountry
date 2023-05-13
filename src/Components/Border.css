@@ -3,4 +3,6 @@
   margin: 0.2rem;
   border-radius: 0.5rem;
   border: 0.1rem solid #000;
+  color: var(--white-back);
+  background: var(---border-bg);
 }
