@@ -139,7 +139,11 @@ const Country = (props) => {
                 <Border key={Math.random()} border={borderingCountry} />
               ))
             ) : (
-              <Border key={Math.random()} border="None" />
+              <Border
+                key={Math.random()}
+                border="None"
+                country={countryData.name.common}
+              />
             )}
           </span>
         </p>

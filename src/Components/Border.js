@@ -51,7 +51,11 @@ const Border = (props) => {
     );
   } else {
     return (
-      <button type="button" className="noBorder">
+      <button
+        type="button"
+        className="noBorder"
+        title={`${props.country} has no borders`}
+      >
         {props.border}
       </button>
     );
