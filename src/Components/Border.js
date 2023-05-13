@@ -1,5 +1,5 @@
 import "./Border.css";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 //  IMPORTING THE CountryInfo CONTEXT
 import CountryInfoContext from "../CountryInfoContext/CountryInfoContext";
@@ -12,9 +12,6 @@ const Border = (props) => {
   const navigate = useNavigate();
 
   const clickHandler = () => {
-    // if (props.border !== "None") {
-    // console.log(props.border);
-
     const borderURL = `https://restcountries.com/v3.1/alpha/${props.border}`;
     fetch(borderURL)
       .then((response) => {
@@ -31,17 +28,7 @@ const Border = (props) => {
         // PROGRAMMATICALLY NAVIGATING TO THE RESULT PAGE
         navigate("/countries-search-app/country");
       });
-    // }
   };
-  // return (
-  //   <button
-  //     type="button"
-  //     className={`Border ${props.border}`}
-  //     onClick={clickHandler}
-  //   >
-  //     {props.border}
-  //   </button>
-  // );
 
   if (props.border !== "None") {
     return (

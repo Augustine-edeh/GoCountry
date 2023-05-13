@@ -2,16 +2,12 @@
   /* CSS HEX FOR LIGHT THEME*/
   --body-bg: #fff;
   --white-back: #000;
-  /* --border-bg: #808080; */
-  --border-bg: red;
 }
 
 .dark-theme {
   /* CSS HEX  FOR DARK THEME*/
   --body-bg: #2f313cff;
   --white-back: #fff;
-  --border-bg: #000;
-  --border-bg: yellow;
 }
 
 * {
@@ -30,12 +26,6 @@ body {
   background-color: var(--body-bg);
   font-family: "Ubuntu";
   min-height: 100vh;
-  /* display: flex; */
-  /* justify-content: center; */
-  /* flex-direction: column; */
-  /* display: grid; */
-  /* place-content: center; */
-  /* color: var(--white-back); */
 }
 
 code {

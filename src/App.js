@@ -30,10 +30,7 @@ function App() {
       </p>
     </>
   );
-  const [HttpErrorMessage, setHttpErrorMessage] = useState(
-    error_
-    // `Error fetching country Information`
-  );
+  const [HttpErrorMessage, setHttpErrorMessage] = useState(error_);
   const changeErrorMessageHandler = (err) => {
     setHttpErrorMessage(err);
   };

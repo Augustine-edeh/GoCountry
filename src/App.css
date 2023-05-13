@@ -1,8 +1,6 @@
 .App-main {
   /* FIXME: Use this color for dark mode */
-  /* background-color: #282c34; */
   max-height: 30rem;
-
   margin: 1.5rem auto;
   min-height: 95vh;
   width: 70rem;
@@ -28,15 +26,11 @@
   width: 2rem;
   padding: 0.1rem;
   background: rgba(128, 128, 128, 0.183);
-  /* background: white; */
   border-radius: 0.25rem;
-  /* content: url("../public/moonIcon.png"); */
-  /* src: url("../public/moonIcon.png"); */
 }
 
 @media (min-width: 300px) and (max-width: 415px) {
   .App-main {
-    /* height: 30rem; */
     width: 20em;
   }
 }
