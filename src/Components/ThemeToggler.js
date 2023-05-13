@@ -1,7 +1,6 @@
 import "./ThemeToggler.css";
 // || IMPORTING THEME MODE ICONS
 import MoonIcon from "../Images/moon-solid.svg";
-import SunIcon from "../Images/sunIcon.png";
 import Sun from "../Images/sun.png";
 
 const ThemeToggler = () => {
