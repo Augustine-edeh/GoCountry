@@ -105,7 +105,9 @@ const Country = (props) => {
         <p>
           Calling code:{" "}
           <span className="light-text">
-            {`${countryData.idd.root}${countryData.idd.suffixes[0]}`}
+            {countryData.idd.suffixes.length > 1
+              ? `${countryData.idd.root}`
+              : `${countryData.idd.root}${countryData.idd.suffixes}`}
           </span>
         </p>
 
