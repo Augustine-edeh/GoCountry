@@ -8,7 +8,7 @@ const HttpError = ({ ErrorMessage }) => {
       <br />
       <h6>Ooops...</h6>
       <div className="ErrorSection">{ErrorMessage}</div>
-      <Link to="/countries-search-app/">
+      <Link to="/GoCountry/">
         <button>Try again</button>
       </Link>
     </div>

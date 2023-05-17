@@ -37,7 +37,7 @@ function App() {
 
   return (
     <div className="App">
-      <Link to="countries-search-app/">
+      <Link to="GoCountry/">
         <Header />
       </Link>
       <ThemeToggler />
@@ -46,19 +46,19 @@ function App() {
         <CountryInfoProvider>
           <Routes>
             <Route
-              path="countries-search-app/"
+              path="GoCountry/"
               element={
                 <SearchForm changeErrorMessage={changeErrorMessageHandler} />
               }
             />
 
             <Route
-              path="countries-search-app/country"
+              path="GoCountry/country"
               element={<Country nation={countryInfo} />}
             />
 
             <Route
-              path="/countries-search-app/error"
+              path="/GoCountry/error"
               element={<HttpError ErrorMessage={HttpErrorMessage} />}
             />
 

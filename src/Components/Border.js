@@ -26,7 +26,7 @@ const Border = (props) => {
         // UPDATING THE countryInfo CONTEXT
         updateCountryInfo(countryData);
         // PROGRAMMATICALLY NAVIGATING TO THE RESULT PAGE
-        navigate("/countries-search-app/country");
+        navigate("/GoCountry/country");
       });
   };
 
