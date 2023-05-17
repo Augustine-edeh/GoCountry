@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/countries-search-app/static/css/main.f7d12953.css",
+    "main.css": "/countries-search-app/static/css/main.9bd07f70.css",
     "main.js": "/countries-search-app/static/js/main.1bfc37de.js",
     "index.html": "/countries-search-app/index.html",
     "static/media/moon-solid.svg": "/countries-search-app/static/media/moon-solid.88b8913a4d9ef935cf5776590777c445.svg",
-    "main.f7d12953.css.map": "/countries-search-app/static/css/main.f7d12953.css.map",
+    "main.9bd07f70.css.map": "/countries-search-app/static/css/main.9bd07f70.css.map",
     "main.1bfc37de.js.map": "/countries-search-app/static/js/main.1bfc37de.js.map"
   },
   "entrypoints": [
-    "static/css/main.f7d12953.css",
+    "static/css/main.9bd07f70.css",
     "static/js/main.1bfc37de.js"
   ]
 }
