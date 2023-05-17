@@ -7,7 +7,7 @@ const Page404 = () => {
       <img src="#" alt="404_Image" />
       <h3>Ooops...</h3>
       <h1>You've gone off the map</h1>
-      <Link to="/countries-search-app/">
+      <Link to="/GoCountry/">
         <button>Take me home</button>
       </Link>
     </div>

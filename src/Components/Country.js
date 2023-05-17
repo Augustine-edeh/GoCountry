@@ -25,7 +25,7 @@ const Country = (props) => {
 
   return (
     <div className="Country">
-      <Link to="/countries-search-app" className="BackButton-container">
+      <Link to="/GoCountry" className="BackButton-container">
         <button className="Country-BackButton">
           <span>&larr;</span> <span>Back</span>
         </button>

@@ -67,7 +67,7 @@ const SearchForm = (props) => {
           // UPDATING THE countryInfo CONTEXT
           updateCountryInfo(countryData);
           // PROGRAMMATICALLY NAVIGATING TO THE RESULT PAGE
-          navigate("/countries-search-app/country");
+          navigate("/GoCountry/country");
         })
         .catch((error) => {
           let ErrorMessage;
@@ -86,7 +86,7 @@ const SearchForm = (props) => {
               </>
             );
             props.changeErrorMessage(ErrorMessage);
-            navigate(`/countries-search-app/error`);
+            navigate(`/GoCountry/error`);
           } else if (error.message === "Failed to fetch") {
             // If user searches country without internet connectivity
             ErrorMessage = (
@@ -101,7 +101,7 @@ const SearchForm = (props) => {
               </>
             );
             props.changeErrorMessage(ErrorMessage);
-            navigate(`/countries-search-app/error`);
+            navigate(`/GoCountry/error`);
             // Displaying an error message to console
             console.error(
               `Please check your internet connection and try again`
@@ -119,7 +119,7 @@ const SearchForm = (props) => {
               </>
             );
             props.changeErrorMessage(ErrorMessage);
-            navigate(`/countries-search-app/error`);
+            navigate(`/GoCountry/error`);
           } else {
             // Handle all other error cases
             ErrorMessage = (
@@ -134,7 +134,7 @@ const SearchForm = (props) => {
               </>
             );
             props.changeErrorMessage(ErrorMessage);
-            navigate(`/countries-search-app/error`);
+            navigate(`/GoCountry/error`);
           }
         });
     } else {
