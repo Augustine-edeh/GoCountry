@@ -14,14 +14,18 @@
 }
 .Form-input:focus {
   border: none;
-  outline: rgb(0, 134, 196) solid 0.1rem;
+  outline: var(--input-outline) solid var(--input-outline-height);
 }
 .Form-button {
+  border: none;
   background: black;
   color: #fff;
-  border: 0.1125rem solid;
   border-radius: 0.5rem;
   flex: 1;
+}
+.Form-button:focus {
+  font-weight: bold;
+  outline: var(--submitButton-outline) solid var(--submitButton-outline-height);
 }
 @media (max-width: 768px) {
   .Form {
