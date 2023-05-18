@@ -1,0 +1,26 @@
+.BackButton,
+.BackButton:focus {
+  background-color: #000000;
+  color: #fff;
+  display: flex;
+  padding: 0.5rem;
+  clip-path: polygon(0% 50%, 20% 0%, 100% 0%, 100% 100%, 20% 100%, 0% 50%);
+  border: none;
+}
+.BackButton-container {
+  display: grid;
+  place-content: center;
+  margin-top: 1rem;
+  height: 2.3rem;
+  width: 4rem;
+  padding: 0.1rem;
+  text-decoration: none;
+  cursor: default;
+  clip-path: polygon(0% 50%, 20% 0%, 100% 0%, 100% 100%, 20% 100%, 0% 50%);
+}
+/* Mobile Responsiveness */
+@media only screen and (max-width: 768px) {
+  .Country-BackButton {
+    padding: 0.45rem;
+  }
+}
