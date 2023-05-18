@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/GoCountry/static/css/main.f7d12953.css",
-    "main.js": "/GoCountry/static/js/main.c14e9df8.js",
+    "main.css": "/GoCountry/static/css/main.51d593c9.css",
+    "main.js": "/GoCountry/static/js/main.d9ae6ad4.js",
     "index.html": "/GoCountry/index.html",
     "static/media/moon-solid.svg": "/GoCountry/static/media/moon-solid.88b8913a4d9ef935cf5776590777c445.svg",
-    "main.f7d12953.css.map": "/GoCountry/static/css/main.f7d12953.css.map",
-    "main.c14e9df8.js.map": "/GoCountry/static/js/main.c14e9df8.js.map"
+    "main.51d593c9.css.map": "/GoCountry/static/css/main.51d593c9.css.map",
+    "main.d9ae6ad4.js.map": "/GoCountry/static/js/main.d9ae6ad4.js.map"
   },
   "entrypoints": [
-    "static/css/main.f7d12953.css",
-    "static/js/main.c14e9df8.js"
+    "static/css/main.51d593c9.css",
+    "static/js/main.d9ae6ad4.js"
   ]
 }
