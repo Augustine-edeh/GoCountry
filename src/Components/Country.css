@@ -1,9 +1,6 @@
 .Country {
   color: var(--white-black);
 }
-.BackButton-container:hover {
-  background: #b3aeae;
-}
 .Country-Name_container {
   display: flex;
   justify-content: center;

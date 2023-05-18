@@ -18,6 +18,10 @@
   cursor: default;
   clip-path: polygon(0% 50%, 20% 0%, 100% 0%, 100% 100%, 20% 100%, 0% 50%);
 }
+.BackButton-container:focus,
+.BackButton-container:hover {
+  background: #b3aeae;
+}
 /* Mobile Responsiveness */
 @media only screen and (max-width: 768px) {
   .Country-BackButton {
