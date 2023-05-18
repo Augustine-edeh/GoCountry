@@ -5,6 +5,7 @@ import { useContext } from "react";
 import CountryInfoContext from "../CountryInfoContext/CountryInfoContext";
 import "./Country.css";
 import Border from "./Border";
+import BackButton from "./BackButton";
 
 const Country = (props) => {
   const { countryInfo } = useContext(CountryInfoContext);
@@ -26,9 +27,7 @@ const Country = (props) => {
   return (
     <div className="Country">
       <Link to="/GoCountry" className="BackButton-container">
-        <button className="Country-BackButton">
-          <span>&larr;</span> <span>Back</span>
-        </button>
+        <BackButton />
       </Link>
       <section className="Country-Name_container">
         <h1 className="Country-Name slide-right">
