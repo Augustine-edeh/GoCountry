@@ -5,7 +5,7 @@
   --input-outline: #0086c4;
   --input-outline-height: 0.1rem;
   --submitButton-outline: #ffaa00;
-  --submitButton-outline-height: 0.2rem;
+  /* --submitButton-outline-height: 0.2rem; */
 }
 
 .dark-theme {
