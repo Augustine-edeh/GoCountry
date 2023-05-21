@@ -127,7 +127,11 @@ const Country = (props) => {
         <p>
           Map:{" "}
           <span className="light-text">
-            <a href={countryData.maps.googleMaps}>
+            <a
+              href={countryData.maps.googleMaps}
+              target="_blank"
+              rel="noreferrer"
+            >
               Map of {countryData.name.common}
             </a>
           </span>
