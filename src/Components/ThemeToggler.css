@@ -1,10 +1,13 @@
-.Theme-Toggle {
+.Theme-Toggle_Button {
   position: fixed;
   top: 1rem;
   right: 1rem;
+  padding: 0.1rem;
+  background: #8080802f;
+  border-radius: 0.25rem;
+  border: none;
+}
+.Theme-Toggle_Icon {
   height: 2rem;
   width: 2rem;
-  padding: 0.1rem;
-  background: rgba(128, 128, 128, 0.183);
-  border-radius: 0.25rem;
 }
