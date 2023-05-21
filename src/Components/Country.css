@@ -51,6 +51,12 @@
 .Country-Details {
   margin: 1.5rem 0;
 }
+.mapLink {
+  color: var(--Map-Link);
+}
+.mapLink:visited {
+  color: var(--Map-Link);
+}
 /* || ANIMATION */
 .slide-right {
   animation: centralize 0.9s ease 0.9s alternate both;
