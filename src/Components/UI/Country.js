@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 //  IMPORTING useContext HOOK
 import { useContext } from "react";
 // IMPORTING THE CountryInfo CONTEXT
-import CountryInfoContext from "../CountryInfoContext/CountryInfoContext";
+import CountryInfoContext from "../../CountryInfoContext/CountryInfoContext";
 import "./Country.css";
 import Border from "./Border";
 import BackButton from "./BackButton";

@@ -7,15 +7,15 @@ import CountryInfoContext from "./CountryInfoContext/CountryInfoContext";
 // IMPORTING THE CountryInfo-Context-Provider
 import { CountryInfoProvider } from "./CountryInfoContext/CountryInfoContext";
 // || IMPORTING THE THEMETOGGLER COMPONENT
-import ThemeToggler from "./Components/ThemeToggler";
+import ThemeToggler from "./Components/UI/ThemeToggler";
 import "./App.css";
-import Title from "./Components/Title";
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
-import Country from "./Components/Country";
-import Page404 from "./Components/Page404";
-import SearchForm from "./Components/SearchForm";
-import HttpError from "./Components/HttpError";
+import Title from "./Components/UI/Title";
+import Header from "./Components/UI/Header";
+import Footer from "./Components/UI/Footer";
+import Country from "./Components/UI/Country";
+import Page404 from "./Components/UI/Page404";
+import SearchForm from "./Components/UI/SearchForm";
+import HttpError from "./Components/UI/HttpError";
 
 function App() {
   const { countryInfo } = useContext(CountryInfoContext);
