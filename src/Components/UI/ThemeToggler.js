@@ -1,7 +1,7 @@
 import "./ThemeToggler.css";
 // || IMPORTING THEME MODE ICONS
-import MoonIcon from "../Images/moon-solid.svg";
-import Sun from "../Images/sun.png";
+import MoonIcon from "../../Images/moon-solid.svg";
+import Sun from "../../Images/sun.png";
 
 const ThemeToggler = () => {
   // Change App theme

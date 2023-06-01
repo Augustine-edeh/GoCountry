@@ -2,7 +2,7 @@ import "./Border.css";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 //  IMPORTING THE CountryInfo CONTEXT
-import CountryInfoContext from "../CountryInfoContext/CountryInfoContext";
+import CountryInfoContext from "../../CountryInfoContext/CountryInfoContext";
 
 const Border = (props) => {
   // IMPORTING THE updateCountryInfo UPDATER FUNCTION

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./HttpError.css";
+import ReturnHomeButton from "./ReturnHomeButton";
 
 const HttpError = ({ ErrorMessage }) => {
   return (
@@ -8,9 +9,9 @@ const HttpError = ({ ErrorMessage }) => {
       <br />
       <h6>Ooops...</h6>
       <div className="ErrorSection">{ErrorMessage}</div>
-      <Link to="/GoCountry/">
-        <button>Try again</button>
-      </Link>
+      {/* <Link to="/GoCountry/"> */}
+      <ReturnHomeButton buttonContent={"Try again"} />
+      {/* </Link> */}
     </div>
   );
 };
