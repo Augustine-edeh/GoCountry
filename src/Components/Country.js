@@ -7,8 +7,6 @@ import "./Country.css";
 import Border from "./Border";
 
 const Country = (props) => {
-  console.log(props.nation);
-
   const { countryInfo } = useContext(CountryInfoContext);
 
   const countryData = countryInfo[0];
@@ -18,14 +16,23 @@ const Country = (props) => {
     currencyString = `${property} (${countryData["currencies"][property].name}: ${countryData["currencies"][property].symbol})`;
   }
 
+  // || COUNTRY LANGUAGE LOGIC
+  let languages = [];
+  for (const property in countryData["languages"]) {
+    languages.push(countryData["languages"][property]);
+  }
+  languages = languages.join(", ");
+
   return (
     <div className="Country">
-      <Link to="/countries-search-app">
-        <button className="Country-BackButton">&larr; Back</button>
+      <Link to="/countries-search-app" className="BackButton-container">
+        <button className="Country-BackButton">
+          <span>&larr;</span> <span>Back</span>
+        </button>
       </Link>
       <section className="Country-Name_container">
         <h1 className="Country-Name slide-right">
-          {countryData.name.common.toUpperCase()}
+          <span>{countryData.name.common.toUpperCase()}</span>
         </h1>
       </section>
 
@@ -55,7 +62,7 @@ const Country = (props) => {
           <div className="Flex-Headline-value">
             <p className="flex-headline_items value">
               &nbsp;
-              {countryData.capital}
+              {countryData.capital.join(", ")}
             </p>
             <p className="flex-headline_items value">
               &nbsp;{countryData.region}
@@ -90,8 +97,7 @@ const Country = (props) => {
         </p>
 
         <p>
-          Languages:{" "}
-          <span className="light-text">{countryData.languages.eng}</span>
+          Languages: <span className="light-text">{languages}</span>
         </p>
         <p>
           Currency: <span className="light-text">{currencyString}</span>
@@ -99,7 +105,9 @@ const Country = (props) => {
         <p>
           Calling code:{" "}
           <span className="light-text">
-            {`${countryData.idd.root}${countryData.idd.suffixes[0]}`}
+            {countryData.idd.suffixes.length > 1
+              ? `${countryData.idd.root}`
+              : `${countryData.idd.root}${countryData.idd.suffixes}`}
           </span>
         </p>
 
@@ -133,7 +141,11 @@ const Country = (props) => {
                 <Border key={Math.random()} border={borderingCountry} />
               ))
             ) : (
-              <Border key={Math.random()} border="None" />
+              <Border
+                key={Math.random()}
+                border="None"
+                country={countryData.name.common}
+              />
             )}
           </span>
         </p>

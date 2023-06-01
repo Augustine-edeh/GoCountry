@@ -6,6 +6,8 @@ import { useContext, useState } from "react";
 import CountryInfoContext from "./CountryInfoContext/CountryInfoContext";
 // IMPORTING THE CountryInfo-Context-Provider
 import { CountryInfoProvider } from "./CountryInfoContext/CountryInfoContext";
+// || IMPORTING THE THEMETOGGLER COMPONENT
+import ThemeToggler from "./Components/ThemeToggler";
 import "./App.css";
 import Title from "./Components/Title";
 import Header from "./Components/Header";
@@ -19,16 +21,16 @@ function App() {
   const { countryInfo } = useContext(CountryInfoContext);
   let error_ = (
     <>
-      <h3 className="ErrorMessageTitle">Error</h3>
+      <h3 className="ErrorMessageTitle">
+        <span className="Destop-warning">&#9888;</span> Error
+        <span className="Mobile-warning">&#9888;</span>
+      </h3>
       <p className="ErrorFixSuggestion">
-        Please reurn to the home page and try again.
+        We encountered an error. Please reurn to home page and try again.
       </p>
     </>
   );
-  const [HttpErrorMessage, setHttpErrorMessage] = useState(
-    error_
-    // `Error fetching country Information`
-  );
+  const [HttpErrorMessage, setHttpErrorMessage] = useState(error_);
   const changeErrorMessageHandler = (err) => {
     setHttpErrorMessage(err);
   };
@@ -38,7 +40,7 @@ function App() {
       <Link to="countries-search-app/">
         <Header />
       </Link>
-
+      <ThemeToggler />
       <main className="App-main">
         <Title />
         <CountryInfoProvider>

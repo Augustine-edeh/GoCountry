@@ -1,11 +1,8 @@
 .Footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
   display: flex;
   justify-content: center;
   width: 100%;
-  padding: 0.3rem;
+  padding: 0.3rem 0;
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
   color: #fff;
@@ -13,4 +10,10 @@
 }
 .Footer-link {
   color: #61dafb;
+}
+
+@media (min-width: 300px) and (max-width: 405px) {
+  .Footer {
+    font-size: 0.96rem;
+  }
 }

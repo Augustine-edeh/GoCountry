@@ -6,7 +6,7 @@
   color: rgb(8, 70, 8);
   font-weight: 300;
   background: rgba(0, 255, 0, 0.075);
-  min-width: 35rem;
+  width: 35rem;
   margin-top: 0.5rem;
   font-size: 1.2rem;
 }
@@ -25,4 +25,21 @@
 .HttpError button:hover {
   background: #000;
   color: #fff;
+}
+.ErrorMessageTitle .Mobile-warning {
+  display: none;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 415px) {
+  .ErrorFixSuggestion {
+    inline-size: 19.5rem;
+    overflow: break-word;
+  }
+  .ErrorMessageTitle .Destop-warning {
+    display: none;
+  }
+  .ErrorMessageTitle .Mobile-warning {
+    display: inline-block;
+  }
 }

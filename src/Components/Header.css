@@ -1,8 +1,6 @@
 .Header {
+  color: var(--white-black);
   display: inline-block;
-  margin: 1rem;
-  position: fixed;
-  top: 0;
-  left: 0;
+  margin: 0.5rem 0 0 0.5rem;
   font-size: calc(20px + 2vmin);
 }
