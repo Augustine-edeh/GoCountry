@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import "./HttpError.css";
 import ReturnHomeButton from "./ReturnHomeButton";
 
