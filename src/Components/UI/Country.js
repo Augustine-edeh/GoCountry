@@ -26,9 +26,7 @@ const Country = (props) => {
 
   return (
     <div className="Country">
-      <Link to="/GoCountry" className="BackButton-container">
-        <BackButton />
-      </Link>
+      <BackButton />
       <section className="Country-Name_container">
         <h1 className="Country-Name slide-right">
           <span>{countryData.name.common.toUpperCase()}</span>
