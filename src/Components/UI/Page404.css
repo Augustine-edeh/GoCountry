@@ -1,4 +1,4 @@
-.Page404 button {
+/* .Page404 button {
   display: grid;
   padding: 0.7rem;
   margin-top: 2rem;
@@ -9,4 +9,42 @@
 }
 .Page404 a {
   text-decoration: none;
+} */
+.Page404-Header {
+  height: 30vh;
+  margin: 2rem 0 7rem 0;
+  font-size: 10rem;
+  font-weight: 300;
+  text-align: center;
+}
+.Page404-text {
+}
+.Page404-description {
+  font-size: 4rem;
+  font-weight: 100;
+}
+.Page404_button {
+  margin-top: 1rem;
+  background: var(--white-black);
+  color: var(--black-white);
+  padding: 1rem;
+  font-size: 1rem;
+  /* border: solid red 0.2rem; */
+  border: none;
+  /* border-radius: 0.7rem; */
+  /* outline: solid skyblue 0.1rem; */
+  /* outline-offset: 0.15rem; */
+  /* box-shadow: 0 0 0 0.3rem #007bff80; */
+}
+.Page404_button:focus {
+  /* border: solid red 0.2rem; */
+  outline: solid 0.1rem var(--white-black);
+  outline-offset: 0.2rem;
+
+  /* box-shadow: 0 0 0 0.2rem #fff, 0 0 0 0.35rem #007bff80; */
+}
+.Page404-Header,
+.Page404-text,
+.Page404-description {
+  color: var(--white-black);
 }
