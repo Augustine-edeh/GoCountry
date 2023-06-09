@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 //  IMPORTING useContext HOOK
 import { useContext } from "react";
 // IMPORTING THE CountryInfo CONTEXT
