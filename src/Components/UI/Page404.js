@@ -4,10 +4,12 @@ import "./Page404.css";
 const Page404 = () => {
   return (
     <div className="Page404">
-      <img src="#" alt="404_Image" />
-      <h3>Ooops...</h3>
-      <h1>You've gone off the map</h1>
-      <ReturnHomeButton buttonContent={"Take me home"} />
+      {/* <img src="#" alt="404_Image" /> */}
+      <p className="Page404-Header">404</p>
+      <p className="Page404-text">Ooops...</p>
+      <p className="Page404-description">You've gone off the map.</p>
+      <button className="Page404_button">Take me home</button>
+      {/* <ReturnHomeButton buttonContent={"Take me home"} /> */}
     </div>
   );
 };

@@ -2,6 +2,7 @@
   /* CSS HEX FOR LIGHT THEME*/
   --body-bg: #fff;
   --white-black: #000;
+  --black-white: #fff;
   --Map-Link: #0000ff;
   --input-outline: #0086c4;
   --input-outline-height: 0.1rem;
@@ -13,6 +14,7 @@
   /* CSS HEX  FOR DARK THEME*/
   --body-bg: #2f313cff;
   --white-black: #fff;
+  --black-white: #000;
   --Map-Link: #0091ff;
   --input-outline: #f6c155d8;
   --input-outline-height: 0.2rem;
