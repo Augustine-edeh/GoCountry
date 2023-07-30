@@ -22,7 +22,12 @@ const ThemeToggler = () => {
       className="Theme-Toggle_Button"
       onClick={changeThemeHandler}
     >
-      <img src={MoonIcon} className="Theme-Toggle_Icon" alt="dark-mode" />
+      <img
+        src={MoonIcon}
+        className="Theme-Toggle_Icon"
+        alt="dark-mode"
+        draggable={false}
+      />
     </button>
   );
 };
