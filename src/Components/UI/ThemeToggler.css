@@ -12,3 +12,7 @@
   height: 2rem;
   width: 2rem;
 }
+.Theme-Toggle_Icon:hover {
+  border-radius: 50%;
+  padding: 0.3rem;
+}
