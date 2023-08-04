@@ -10,7 +10,7 @@ const SearchForm = (props) => {
   // IMPORTING THE updateCountryInfo UPDATER FUNCTION
   const { updateCountryInfo } = useContext(CountryInfoContext);
 
-  const [isSearchInputEmpty, setIsSearchInputEmpty] = useState();
+  const [isSearchInputEmpty, setIsSearchInputEmpty] = useState(false);
 
   const changeHandler = (event) => {
     setcountryValue(event.target.value);
@@ -22,10 +22,11 @@ const SearchForm = (props) => {
     event.preventDefault();
 
     // CHEECKING IF countryValue IS NOT EMPTY
-    if (!!countryValue) {
-      // SETTING isSearchInputEmpty TO FALSE
-      setIsSearchInputEmpty((previous) => false);
-
+    if (countryValue.trim().length === 0) {
+      // SETTING isSearchInputEmpty TO TRUE
+      setIsSearchInputEmpty(() => true);
+      return;
+    } else {
       // || FILTERING THE COUNTRY NAME ENTERED (TRIM AND REMOVE EVERY NON-ALPHABETIC CHARACTER EXCEPT WHITESPACES IN-BETWEEN WORDS)
       const filteredCountryValue = countryValue
         .trim()
@@ -137,8 +138,6 @@ const SearchForm = (props) => {
             navigate(`/GoCountry/error`);
           }
         });
-    } else {
-      setIsSearchInputEmpty(true);
     }
 
     // Adding 2-way binding for countryValue
