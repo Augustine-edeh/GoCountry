@@ -1,5 +1,5 @@
 // IMPORTING THE Routes & Route COMPONENTS
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link, Navigate } from "react-router-dom";
 // IMPORTING useContext HOOK
 import { useContext, useState } from "react";
 //  IMPORTING THE CountryInfo CONTEXT
@@ -51,6 +51,13 @@ function App() {
                 <SearchForm changeErrorMessage={changeErrorMessageHandler} />
               }
             />
+            <Route
+              path="countries-search-app"
+              element={
+                // <SearchForm changeErrorMessage={changeErrorMessageHandler} />
+                <Navigate to="/GoCountry" />
+              }
+            />
 
             <Route
               path="GoCountry/country"
@@ -63,6 +70,10 @@ function App() {
             />
 
             <Route path="*" element={<Page404 />} />
+
+            {/* <Route path="/" element={<Home />} /> */}
+            {/* The next line is very important for the Navigate component to work */}
+            {/* <Route path="/error-page" element={<ErrorPage />} /> */}
           </Routes>
         </CountryInfoProvider>
       </main>
