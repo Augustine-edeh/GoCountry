@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <code className="Footer">
       <p>
-        Designed by{" "}
+        Design by{" "}
         <span>
           <a href="https://twitter.com/Ble_etim" className="Footer-link">
             @Blessing
