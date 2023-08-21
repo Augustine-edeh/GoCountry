@@ -10,22 +10,6 @@
   margin-top: 0.5rem;
   font-size: 1.2rem;
 }
-/* .HttpError button {
-  display: grid;
-  padding: 0.5rem;
-  margin-top: 2rem;
-  font-size: 1.2rem;
-  border-radius: 0.7rem;
-  outline: 0.1rem solid #000;
-  border: none;
-}
-.HttpError a {
-  text-decoration: none;
-}
-.HttpError button:hover {
-  background: #000;
-  color: #fff;
-} */
 .ErrorMessageTitle .Mobile-warning {
   display: none;
 }
