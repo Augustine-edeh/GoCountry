@@ -14,7 +14,7 @@ import Header from "./Components/UI/Header";
 import Footer from "./Components/UI/Footer";
 import Country from "./Components/UI/Country";
 import Page404 from "./Components/UI/Page404";
-import SearchForm from "./Components/UI/SearchForm";
+import Home from "./Components/UI/Home";
 import HttpError from "./Components/UI/HttpError";
 
 function App() {
@@ -47,9 +47,7 @@ function App() {
           <Routes>
             <Route
               path="GoCountry/"
-              element={
-                <SearchForm changeErrorMessage={changeErrorMessageHandler} />
-              }
+              element={<Home changeErrorMessage={changeErrorMessageHandler} />}
             />
             <Route
               path="countries-search-app"

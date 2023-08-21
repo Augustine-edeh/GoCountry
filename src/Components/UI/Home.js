@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 //  IMPORTING THE CountryInfo CONTEXT
 import CountryInfoContext from "../../CountryInfoContext/CountryInfoContext";
-import "./SearchForm.css";
+import "./Home.css";
 
 const SearchForm = (props) => {
   const [countryValue, setcountryValue] = useState("");
