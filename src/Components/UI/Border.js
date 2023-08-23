@@ -1,6 +1,7 @@
 import "./Border.css";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import countriesList from "./CountriesList";
 //  IMPORTING THE CountryInfo CONTEXT
 import CountryInfoContext from "../../CountryInfoContext/CountryInfoContext";
 
@@ -31,7 +32,12 @@ const Border = (props) => {
   };
 
   return props.border !== "None" ? (
-    <button type="button" className="Border" onClick={clickHandler}>
+    <button
+      type="button"
+      className="Border"
+      onClick={clickHandler}
+      title={countriesList.data[props.border].country}
+    >
       {props.border}
     </button>
   ) : (
