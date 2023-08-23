@@ -1,7 +1,7 @@
 import "./Border.css";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import countriesList from "./CountriesList";
+import CountryNames from "../../CountriesCommonNameList/countryNames.json";
 //  IMPORTING THE CountryInfo CONTEXT
 import CountryInfoContext from "../../CountryInfoContext/CountryInfoContext";
 
@@ -36,7 +36,7 @@ const Border = (props) => {
       type="button"
       className="Border"
       onClick={clickHandler}
-      title={countriesList.data[props.border].country}
+      title={CountryNames[0].data[props.border].country}
     >
       {props.border}
     </button>
