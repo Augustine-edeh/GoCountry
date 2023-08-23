@@ -43,23 +43,5 @@ const Border = (props) => {
       {props.border}
     </button>
   );
-
-  // if (props.border !== "None") {
-  //   return (
-  //     <button type="button" className="Border" onClick={clickHandler}>
-  //       {props.border}
-  //     </button>
-  //   );
-  // } else {
-  //   return (
-  //     <button
-  //       type="button"
-  //       className="noBorder"
-  //       title={`${props.country} has no borders`}
-  //     >
-  //       {props.border}
-  //     </button>
-  //   );
-  // }
 };
 export default Border;
