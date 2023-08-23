@@ -30,22 +30,36 @@ const Border = (props) => {
       });
   };
 
-  if (props.border !== "None") {
-    return (
-      <button type="button" className="Border" onClick={clickHandler}>
-        {props.border}
-      </button>
-    );
-  } else {
-    return (
-      <button
-        type="button"
-        className="noBorder"
-        title={`${props.country} has no borders`}
-      >
-        {props.border}
-      </button>
-    );
-  }
+  return props.border !== "None" ? (
+    <button type="button" className="Border" onClick={clickHandler}>
+      {props.border}
+    </button>
+  ) : (
+    <button
+      type="button"
+      className="noBorder"
+      title={`${props.country} has no borders`}
+    >
+      {props.border}
+    </button>
+  );
+
+  // if (props.border !== "None") {
+  //   return (
+  //     <button type="button" className="Border" onClick={clickHandler}>
+  //       {props.border}
+  //     </button>
+  //   );
+  // } else {
+  //   return (
+  //     <button
+  //       type="button"
+  //       className="noBorder"
+  //       title={`${props.country} has no borders`}
+  //     >
+  //       {props.border}
+  //     </button>
+  //   );
+  // }
 };
 export default Border;
