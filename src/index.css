@@ -8,6 +8,8 @@
   --input-outline-height: 0.1rem;
   --submitButton-outline: #ffaa00;
   --submitButton-outline-height: 0.2rem;
+  --error-suggestion-text: rgb(8, 70, 8);
+  --error-suggestion-bg: rgba(0, 255, 0, 0.075);
 }
 
 .dark-theme {
@@ -20,6 +22,8 @@
   --input-outline-height: 0.2rem;
   --submitButton-outline: #0086c4;
   --submitButton-outline-height: 0.025rem;
+  --error-suggestion-text: #e8d7d7;
+  --error-suggestion-bg: #2f313cff;
 }
 
 * {

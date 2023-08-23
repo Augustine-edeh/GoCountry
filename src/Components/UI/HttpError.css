@@ -3,9 +3,11 @@
   margin-top: 1rem;
 }
 .ErrorFixSuggestion {
-  color: rgb(8, 70, 8);
   font-weight: 300;
-  background: rgba(0, 255, 0, 0.075);
+  /* color: rgb(8, 70, 8); */
+  /* background: rgba(0, 255, 0, 0.075); */
+  color: var(--error-suggestion-text);
+  background: var(--error-suggestion-bg);
   width: 35rem;
   margin-top: 0.5rem;
   font-size: 1.2rem;
