@@ -28,6 +28,14 @@ const Border = (props) => {
         updateCountryInfo(countryData);
         // PROGRAMMATICALLY NAVIGATING TO THE RESULT PAGE
         navigate("/GoCountry/country");
+        document.querySelector(".Country-Name").classList.remove("slide-right");
+        setTimeout(
+          () =>
+            document
+              .querySelector(".Country-Name")
+              .classList.add("slide-right"),
+          1
+        );
       });
   };
 
