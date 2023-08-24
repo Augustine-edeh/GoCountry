@@ -26,8 +26,6 @@ const Border = (props) => {
       .then((countryData) => {
         // UPDATING THE countryInfo CONTEXT
         updateCountryInfo(countryData);
-        // PROGRAMMATICALLY NAVIGATING TO THE RESULT PAGE
-        navigate("/GoCountry/country");
         document.querySelector(".Country-Name").classList.remove("slide-right");
         setTimeout(
           () =>
