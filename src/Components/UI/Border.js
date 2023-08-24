@@ -26,9 +26,9 @@ const Border = (props) => {
       .then((countryData) => {
         // UPDATING THE countryInfo CONTEXT
         updateCountryInfo(countryData);
-        // PROGRAMMATICALLY NAVIGATING TO THE RESULT PAGE
-        navigate("/GoCountry/country");
+        // TRIGER country name animation by 1st removing the animation class and re-adding it thereafter
         document.querySelector(".Country-Name").classList.remove("slide-right");
+        // Simulating a delay before re-adding the animation class
         setTimeout(
           () =>
             document
