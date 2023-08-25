@@ -68,10 +68,6 @@ function App() {
             />
 
             <Route path="*" element={<Page404 />} />
-
-            {/* <Route path="/" element={<Home />} /> */}
-            {/* The next line is very important for the Navigate component to work */}
-            {/* <Route path="/error-page" element={<ErrorPage />} /> */}
           </Routes>
         </CountryInfoProvider>
       </main>
