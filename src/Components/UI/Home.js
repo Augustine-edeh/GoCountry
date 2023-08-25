@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import CountryInfoContext from "../../CountryInfoContext/CountryInfoContext";
 import "./Home.css";
 
-const SearchForm = (props) => {
+const Home = (props) => {
   const [countryValue, setcountryValue] = useState("");
 
   // IMPORTING THE updateCountryInfo UPDATER FUNCTION
@@ -166,4 +166,4 @@ const SearchForm = (props) => {
     </>
   );
 };
-export default SearchForm;
+export default Home;
