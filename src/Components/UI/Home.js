@@ -6,6 +6,7 @@ import "./Home.css";
 
 const Home = (props) => {
   const [countryValue, setcountryValue] = useState("");
+  console.log(props.loadState);
 
   // IMPORTING THE updateCountryInfo UPDATER FUNCTION
   const { updateCountryInfo } = useContext(CountryInfoContext);
@@ -42,11 +43,14 @@ const Home = (props) => {
       const countryURL = `https://restcountries.com/v3.1/name/${filteredCountryValue}`;
       fetch(countryURL)
         .then((response) => {
+          props.updateIsLoading(true);
+
           // Checking if response status is successful
           if (!response.ok) {
             // Throwing error if response status is not successful
             throw Error(response.statusText);
           }
+          props.updateIsLoading(false);
           return response.json();
         })
         .then((countryData) => {
@@ -71,6 +75,7 @@ const Home = (props) => {
           navigate("/GoCountry/country");
         })
         .catch((error) => {
+          props.updateIsLoading(true);
           let ErrorMessage;
           // console.log(error.message);
           if (error.message === "Not Found") {

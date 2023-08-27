@@ -17,8 +17,17 @@ import Page404 from "./Components/UI/Page404";
 import Home from "./Components/UI/Home";
 import HttpError from "./Components/UI/HttpError";
 
+import { Blocks } from "react-loader-spinner";
+
 function App() {
   const { countryInfo } = useContext(CountryInfoContext);
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  function updateIsLoadingHandler(load) {
+    setIsLoading(load);
+  }
+
   let error_ = (
     <>
       <h3 className="ErrorMessageTitle">
@@ -37,6 +46,18 @@ function App() {
 
   return (
     <div className="App">
+      {isLoading ? (
+        <Blocks
+          visible={true}
+          height="80"
+          width="80"
+          ariaLabel="blocks-loading"
+          wrapperStyle={{}}
+          wrapperClass="blocks-wrapper"
+        />
+      ) : (
+        ""
+      )}
       <Link to="GoCountry/">
         <Header />
       </Link>
@@ -47,7 +68,13 @@ function App() {
           <Routes>
             <Route
               path="GoCountry/"
-              element={<Home changeErrorMessage={changeErrorMessageHandler} />}
+              element={
+                <Home
+                  updateIsLoading={updateIsLoadingHandler}
+                  loadState={isLoading}
+                  changeErrorMessage={changeErrorMessageHandler}
+                />
+              }
             />
             <Route
               path="countries-search-app"
@@ -70,6 +97,7 @@ function App() {
             <Route path="*" element={<Page404 />} />
           </Routes>
         </CountryInfoProvider>
+        {isLoading ? "Loading!..." : "Not Loading!..."}
       </main>
 
       <Footer />
