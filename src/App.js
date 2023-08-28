@@ -17,7 +17,8 @@ import Page404 from "./Components/UI/Page404";
 import Home from "./Components/UI/Home";
 import HttpError from "./Components/UI/HttpError";
 
-import { Blocks } from "react-loader-spinner";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function App() {
   const { countryInfo } = useContext(CountryInfoContext);
@@ -26,6 +27,7 @@ function App() {
 
   function updateIsLoadingHandler(load) {
     setIsLoading(load);
+    // console.log(isLoading);
   }
 
   let error_ = (
@@ -47,17 +49,16 @@ function App() {
   return (
     <div className="App">
       {isLoading ? (
-        <Blocks
-          visible={true}
-          height="80"
-          width="80"
-          ariaLabel="blocks-loading"
-          wrapperStyle={{}}
-          wrapperClass="blocks-wrapper"
-        />
+        <Backdrop
+          sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+          open
+        >
+          <CircularProgress color="inherit" />
+        </Backdrop>
       ) : (
         ""
       )}
+
       <Link to="GoCountry/">
         <Header />
       </Link>
@@ -71,7 +72,7 @@ function App() {
               element={
                 <Home
                   updateIsLoading={updateIsLoadingHandler}
-                  loadState={isLoading}
+                  // loadState={isLoading}
                   changeErrorMessage={changeErrorMessageHandler}
                 />
               }
@@ -97,7 +98,6 @@ function App() {
             <Route path="*" element={<Page404 />} />
           </Routes>
         </CountryInfoProvider>
-        {isLoading ? "Loading!..." : "Not Loading!..."}
       </main>
 
       <Footer />

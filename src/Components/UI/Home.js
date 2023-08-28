@@ -6,7 +6,7 @@ import "./Home.css";
 
 const Home = (props) => {
   const [countryValue, setcountryValue] = useState("");
-  console.log(props.loadState);
+  // console.log(props.loadState);
 
   // IMPORTING THE updateCountryInfo UPDATER FUNCTION
   const { updateCountryInfo } = useContext(CountryInfoContext);
@@ -40,30 +40,31 @@ const Home = (props) => {
       customErrorMessage.prototype = new Error();
 
       // || COUNTRY HTTP REQUEST CALL
-      const countryURL = `https://restcountries.com/v3.1/name/${filteredCountryValue}`;
-      fetch(countryURL)
-        .then((response) => {
+      const fetchData = async (filteredCountryValue) => {
+        try {
           props.updateIsLoading(true);
+          const countryURL = `https://restcountries.com/v3.1/name/${filteredCountryValue}`;
+          const response = await fetch(countryURL);
 
           // Checking if response status is successful
           if (!response.ok) {
             // Throwing error if response status is not successful
-            throw Error(response.statusText);
+            throw new Error(response.statusText);
           }
-          props.updateIsLoading(false);
-          return response.json();
-        })
-        .then((countryData) => {
+
+          const countryData = await response.json();
+
           // IF HTTP REQUEST RETURNS MORE THAN ONE DATA ARRAY
           if (countryData.length > 1) {
-            countryData = countryData.filter(
+            const filteredData = countryData.filter(
               (country) =>
-                country.name.common.toLocaleLowerCase() ===
-                filteredCountryValue.toLocaleLowerCase()
+                country.name.common.toLowerCase() ===
+                filteredCountryValue.toLowerCase()
             );
 
+            console.log(filteredData);
             // IF HTTP REQUEST RETURNS MORE THAN ONE DATA ARRAY AND NONE MATCHES A COMMON NAME AS THE COUNTRY NAME ENTERED BY THE USER
-            if (!countryData.length) {
+            if (!filteredData.length) {
               throw new customErrorMessage({
                 message: "Country Name not specific",
               });
@@ -73,12 +74,12 @@ const Home = (props) => {
           updateCountryInfo(countryData);
           // PROGRAMMATICALLY NAVIGATING TO THE RESULT PAGE
           navigate("/GoCountry/country");
-        })
-        .catch((error) => {
-          props.updateIsLoading(true);
+        } catch (error) {
           let ErrorMessage;
-          // console.log(error.message);
+
           if (error.message === "Not Found") {
+            /* ... */ // Error message for "Not Found"
+
             // If the country searched for is not correct/Not Found
             ErrorMessage = (
               <>
@@ -91,9 +92,11 @@ const Home = (props) => {
                 </p>
               </>
             );
-            props.changeErrorMessage(ErrorMessage);
-            navigate(`/GoCountry/error`);
+            // props.changeErrorMessage(ErrorMessage);
+            // navigate(`/GoCountry/error`);
           } else if (error.message === "Failed to fetch") {
+            /* ... */ // Error message for "Failed to fetch"
+
             // If user searches country without internet connectivity
             ErrorMessage = (
               <>
@@ -106,13 +109,16 @@ const Home = (props) => {
                 </p>
               </>
             );
-            props.changeErrorMessage(ErrorMessage);
-            navigate(`/GoCountry/error`);
+            // props.changeErrorMessage(ErrorMessage);
+            // navigate(`/GoCountry/error`);
+
             // Displaying an error message to console
             console.error(
               `Please check your internet connection and try again`
             );
           } else if (error instanceof customErrorMessage) {
+            /* ... */ // Error message for custom error
+
             ErrorMessage = (
               <>
                 <h3 className="ErrorMessageTitle">
@@ -124,9 +130,11 @@ const Home = (props) => {
                 </p>
               </>
             );
-            props.changeErrorMessage(ErrorMessage);
-            navigate(`/GoCountry/error`);
+            // props.changeErrorMessage(ErrorMessage);
+            // navigate(`/GoCountry/error`);
           } else {
+            /* ... */ // Error message for other errors
+
             // Handle all other error cases
             ErrorMessage = (
               <>
@@ -139,10 +147,19 @@ const Home = (props) => {
                 </p>
               </>
             );
-            props.changeErrorMessage(ErrorMessage);
-            navigate(`/GoCountry/error`);
+            // props.changeErrorMessage(ErrorMessage);
+            // navigate(`/GoCountry/error`);
           }
-        });
+
+          props.changeErrorMessage(ErrorMessage);
+          navigate("/GoCountry/error");
+        } finally {
+          props.updateIsLoading(false);
+        }
+      };
+
+      // || Calling
+      fetchData(filteredCountryValue);
     }
 
     // Adding 2-way binding for countryValue
@@ -170,5 +187,22 @@ const Home = (props) => {
       )}
     </>
   );
+
+  // const fetchData = async () => {
+  //   try {
+  //     setLoading(true);
+  //     const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+  //     const data = await response.json();
+  //     setPosts(data);
+  //   } catch (error) {
+  //     setError(error.message);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+  // useEffect(()=>{
+  //   fetchData();
+  // },[]);
 };
 export default Home;
