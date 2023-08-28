@@ -17,8 +17,19 @@ import Page404 from "./Components/UI/Page404";
 import Home from "./Components/UI/Home";
 import HttpError from "./Components/UI/HttpError";
 
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
+
 function App() {
   const { countryInfo } = useContext(CountryInfoContext);
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  function updateIsLoadingHandler(load) {
+    setIsLoading(load);
+    // console.log(isLoading);
+  }
+
   let error_ = (
     <>
       <h3 className="ErrorMessageTitle">
@@ -37,6 +48,17 @@ function App() {
 
   return (
     <div className="App">
+      {isLoading ? (
+        <Backdrop
+          sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+          open
+        >
+          <CircularProgress color="inherit" />
+        </Backdrop>
+      ) : (
+        ""
+      )}
+
       <Link to="GoCountry/">
         <Header />
       </Link>
@@ -47,7 +69,13 @@ function App() {
           <Routes>
             <Route
               path="GoCountry/"
-              element={<Home changeErrorMessage={changeErrorMessageHandler} />}
+              element={
+                <Home
+                  updateIsLoading={updateIsLoadingHandler}
+                  // loadState={isLoading}
+                  changeErrorMessage={changeErrorMessageHandler}
+                />
+              }
             />
             <Route
               path="countries-search-app"
@@ -68,10 +96,6 @@ function App() {
             />
 
             <Route path="*" element={<Page404 />} />
-
-            {/* <Route path="/" element={<Home />} /> */}
-            {/* The next line is very important for the Navigate component to work */}
-            {/* <Route path="/error-page" element={<ErrorPage />} /> */}
           </Routes>
         </CountryInfoProvider>
       </main>
