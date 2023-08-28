@@ -6,7 +6,7 @@ GoCountry is a web application that allows users to search for countries by name
 
 ## How to Use
 
-To use the GoCountry web application, simply go to the following link: https://augustine-edeh.github.io/countries-search-app/. Once the page has loaded, you can enter the name of the country you want to search for in the search bar provided. Click on the "Search" button or press "Enter" to get the results.
+To use the GoCountry web application, simply go to the following link: [https://augustine-edeh.github.io/GoCountry/](https://augustine-edeh.github.io/GoCountry/). Once the page has loaded, you can enter the name of the country you want to search for in the search bar provided. Click on the "Search" button or press "Enter" to get the results.
 
 
 ## Features
