@@ -79,10 +79,7 @@ function App() {
             />
             <Route
               path="countries-search-app"
-              element={
-                // <SearchForm changeErrorMessage={changeErrorMessageHandler} />
-                <Navigate to="/GoCountry" />
-              }
+              element={<Navigate to="/GoCountry" />}
             />
 
             <Route
