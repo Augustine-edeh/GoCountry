@@ -157,6 +157,7 @@ const Home = (props) => {
       <form className="Form" onSubmit={submitHandler}>
         <input
           type="text"
+          name="search"
           className="Form-input"
           placeholder="Enter country name"
           value={countryValue}
