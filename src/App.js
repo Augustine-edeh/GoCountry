@@ -27,7 +27,6 @@ function App() {
 
   function updateIsLoadingHandler(load) {
     setIsLoading(load);
-    // console.log(isLoading);
   }
 
   let error_ = (
@@ -72,7 +71,6 @@ function App() {
               element={
                 <Home
                   updateIsLoading={updateIsLoadingHandler}
-                  // loadState={isLoading}
                   changeErrorMessage={changeErrorMessageHandler}
                 />
               }
