@@ -158,6 +158,7 @@ const Home = (props) => {
         <input
           type="text"
           name="search"
+          autoComplete="country-name"
           className="Form-input"
           placeholder="Enter country name"
           value={countryValue}
