@@ -51,17 +51,18 @@ const Home = (props) => {
             throw new Error(response.statusText);
           }
 
-          const countryData = await response.json();
+          let countryData = await response.json();
 
           // IF HTTP REQUEST RETURNS MORE THAN ONE DATA ARRAY
           if (countryData.length > 1) {
+            // console.log(countryData[0].name.common);
             const filteredData = countryData.filter(
               (country) =>
                 country.name.common.toLowerCase() ===
                 filteredCountryValue.toLowerCase()
             );
+            countryData = filteredData;
 
-            console.log(filteredData);
             // IF HTTP REQUEST RETURNS MORE THAN ONE DATA ARRAY AND NONE MATCHES A COMMON NAME AS THE COUNTRY NAME ENTERED BY THE USER
             if (!filteredData.length) {
               throw new customErrorMessage({
