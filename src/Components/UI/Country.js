@@ -139,7 +139,11 @@ const Country = (props) => {
           <span className="light-text">
             {"borders" in countryData ? (
               countryData.borders.map((borderingCountry) => (
-                <Border key={Math.random()} border={borderingCountry} />
+                <Border
+                  key={Math.random()}
+                  border={borderingCountry}
+                  updateIsLoading={props.updateIsLoading}
+                />
               ))
             ) : (
               <Border

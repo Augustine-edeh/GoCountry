@@ -82,7 +82,12 @@ function App() {
 
             <Route
               path="GoCountry/country"
-              element={<Country nation={countryInfo} />}
+              element={
+                <Country
+                  updateIsLoading={updateIsLoadingHandler}
+                  nation={countryInfo}
+                />
+              }
             />
 
             <Route
