@@ -6,7 +6,6 @@ import "./Home.css";
 
 const Home = (props) => {
   const [countryValue, setcountryValue] = useState("");
-  // console.log(props.loadState);
 
   // IMPORTING THE updateCountryInfo UPDATER FUNCTION
   const { updateCountryInfo } = useContext(CountryInfoContext);
@@ -52,17 +51,18 @@ const Home = (props) => {
             throw new Error(response.statusText);
           }
 
-          const countryData = await response.json();
+          let countryData = await response.json();
 
           // IF HTTP REQUEST RETURNS MORE THAN ONE DATA ARRAY
           if (countryData.length > 1) {
+            // console.log(countryData[0].name.common);
             const filteredData = countryData.filter(
               (country) =>
                 country.name.common.toLowerCase() ===
                 filteredCountryValue.toLowerCase()
             );
+            countryData = filteredData;
 
-            console.log(filteredData);
             // IF HTTP REQUEST RETURNS MORE THAN ONE DATA ARRAY AND NONE MATCHES A COMMON NAME AS THE COUNTRY NAME ENTERED BY THE USER
             if (!filteredData.length) {
               throw new customErrorMessage({
@@ -78,8 +78,6 @@ const Home = (props) => {
           let ErrorMessage;
 
           if (error.message === "Not Found") {
-            /* ... */ // Error message for "Not Found"
-
             // If the country searched for is not correct/Not Found
             ErrorMessage = (
               <>
@@ -92,11 +90,7 @@ const Home = (props) => {
                 </p>
               </>
             );
-            // props.changeErrorMessage(ErrorMessage);
-            // navigate(`/GoCountry/error`);
           } else if (error.message === "Failed to fetch") {
-            /* ... */ // Error message for "Failed to fetch"
-
             // If user searches country without internet connectivity
             ErrorMessage = (
               <>
@@ -109,16 +103,13 @@ const Home = (props) => {
                 </p>
               </>
             );
-            // props.changeErrorMessage(ErrorMessage);
-            // navigate(`/GoCountry/error`);
 
             // Displaying an error message to console
             console.error(
               `Please check your internet connection and try again`
             );
           } else if (error instanceof customErrorMessage) {
-            /* ... */ // Error message for custom error
-
+            // If user searches for a not so specific country name
             ErrorMessage = (
               <>
                 <h3 className="ErrorMessageTitle">
@@ -130,11 +121,7 @@ const Home = (props) => {
                 </p>
               </>
             );
-            // props.changeErrorMessage(ErrorMessage);
-            // navigate(`/GoCountry/error`);
           } else {
-            /* ... */ // Error message for other errors
-
             // Handle all other error cases
             ErrorMessage = (
               <>
@@ -147,18 +134,17 @@ const Home = (props) => {
                 </p>
               </>
             );
-            // props.changeErrorMessage(ErrorMessage);
-            // navigate(`/GoCountry/error`);
           }
-
+          // Assigning Error Messages for respective error cases
           props.changeErrorMessage(ErrorMessage);
+          // || NAVIGATING USER TO ERROR PAGE
           navigate("/GoCountry/error");
         } finally {
           props.updateIsLoading(false);
         }
       };
 
-      // || Calling
+      // || CALLING ACTION FOR HTTP REQUEST
       fetchData(filteredCountryValue);
     }
 
@@ -171,6 +157,8 @@ const Home = (props) => {
       <form className="Form" onSubmit={submitHandler}>
         <input
           type="text"
+          name="search"
+          autoComplete="country-name"
           className="Form-input"
           placeholder="Enter country name"
           value={countryValue}
@@ -187,22 +175,5 @@ const Home = (props) => {
       )}
     </>
   );
-
-  // const fetchData = async () => {
-  //   try {
-  //     setLoading(true);
-  //     const response = await fetch("https://jsonplaceholder.typicode.com/posts");
-  //     const data = await response.json();
-  //     setPosts(data);
-  //   } catch (error) {
-  //     setError(error.message);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-
-  // useEffect(()=>{
-  //   fetchData();
-  // },[]);
 };
 export default Home;

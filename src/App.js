@@ -27,7 +27,6 @@ function App() {
 
   function updateIsLoadingHandler(load) {
     setIsLoading(load);
-    // console.log(isLoading);
   }
 
   let error_ = (
@@ -72,17 +71,13 @@ function App() {
               element={
                 <Home
                   updateIsLoading={updateIsLoadingHandler}
-                  // loadState={isLoading}
                   changeErrorMessage={changeErrorMessageHandler}
                 />
               }
             />
             <Route
               path="countries-search-app"
-              element={
-                // <SearchForm changeErrorMessage={changeErrorMessageHandler} />
-                <Navigate to="/GoCountry" />
-              }
+              element={<Navigate to="/GoCountry" />}
             />
 
             <Route
