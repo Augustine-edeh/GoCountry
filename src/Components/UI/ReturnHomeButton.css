@@ -1,21 +1,13 @@
 .ReturnHomeButton {
-  display: inline-block;
-  margin-top: 2rem;
-  border-radius: 0.7rem;
-}
-.ReturnHomeButton button {
-  display: grid;
-  place-content: center;
-  padding: 0.5rem;
-  font-size: 1.2rem;
-  border-radius: 0.7rem;
-  outline: 0.1rem solid #000;
+  margin-top: 1rem;
+  background: var(--white-black);
+  color: var(--black-white);
+  padding: 1rem;
+  font-size: 1rem;
   border: none;
+  border-radius: 0.7rem;
 }
-.ReturnHomeButton {
-  text-decoration: none;
-}
-.ReturnHomeButton button:hover {
-  background: #000;
-  color: #fff;
+.ReturnHomeButton:focus {
+  outline: solid 0.1rem var(--white-black);
+  outline-offset: 0.19rem;
 }

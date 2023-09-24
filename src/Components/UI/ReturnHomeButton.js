@@ -1,11 +1,16 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./ReturnHomeButton.css";
 
 const ReturnHomeButton = ({ buttonContent }) => {
+  const navigate = useNavigate();
+  const clickHandler = () => {
+    navigate("/GoCountry/");
+  };
+
   return (
-    <Link to="/GoCountry/" className="ReturnHomeButton">
-      <button>{buttonContent}</button>
-    </Link>
+    <button className="ReturnHomeButton" onClick={clickHandler}>
+      {buttonContent}
+    </button>
   );
 };
 
