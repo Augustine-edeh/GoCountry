@@ -14,7 +14,8 @@
   height: 2rem;
   width: 2rem;
 }
-.Theme-Toggle_Button:hover {
+.Theme-Toggle_Button:hover,
+.Theme-Toggle_Button:focus {
   height: 2.8rem;
   width: 2.8rem;
   border-radius: 50%;
