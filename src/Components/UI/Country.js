@@ -2,6 +2,7 @@
 import { useContext } from "react";
 // IMPORTING THE CountryInfo CONTEXT
 import CountryInfoContext from "../../CountryInfoContext/CountryInfoContext";
+import CountryNames from "../../CountriesCommonNameList/countryNames.json";
 import "./Country.css";
 import Border from "./Border";
 import BackButton from "./BackButton";
@@ -87,9 +88,16 @@ const Country = (props) => {
               countryData.startOfWeek.slice(1)}
           </span>
         </p>
-        <p>
+        {/* <p title={CountryNames[0].data[countryData.name.common].country}> */}
+        <p
+          title={`Date/Time at ${
+            CountryNames[0].data[countryData.cca3].country
+          }'s capital, ${countryData.capital}`}
+        >
+          {console.log(CountryNames[0].data[countryData.cca3].country)}
           {/* Time-Date: <span className="light-text">[03:50:40] 2023-09-25 </span> */}
-          Time-Date:{" "}
+          Time-Date:
+          {/* {console.log("caa3:", countryData.cca3)} */}
           <span className="light-text">
             {/* {countryData.Date.replace(/-/g, "/")} */}
             {countryData.date}
