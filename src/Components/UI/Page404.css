@@ -21,24 +21,6 @@
   font-size: 4rem;
   font-weight: 100;
 }
-.Page404_button {
-  margin-top: 1rem;
-  background: var(--white-black);
-  color: var(--black-white);
-  padding: 1rem;
-  font-size: 1rem;
-  /* border: solid red 0.2rem; */
-  border: none;
-  border-radius: 0.7rem;
-  /* outline: solid skyblue 0.1rem; */
-  /* outline-offset: 0.15rem; */
-  /* box-shadow: 0 0 0 0.3rem #007bff80; */
-}
-.Page404_button:focus {
-  /* border: solid red 0.2rem; */
-  outline: solid 0.1rem var(--white-black);
-  outline-offset: 0.19rem;
-}
 .Page404-Header,
 .Page404-text,
 .Page404-description {

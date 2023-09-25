@@ -88,6 +88,18 @@ const Country = (props) => {
           </span>
         </p>
         <p>
+          {/* Time-Date: <span className="light-text">[03:50:40] 2023-09-25 </span> */}
+          Time-Date:{" "}
+          <span className="light-text">
+            {/* {countryData.Date.replace(/-/g, "/")} */}
+            {countryData.date}
+            {", "}
+            {countryData.time}
+            {/* {console.log(countryData.Date)} */}
+            {/* {countryData.Date_Time[1]} */}
+          </span>
+        </p>
+        <p>
           Demonym:{" "}
           <span className="light-text">{countryData.demonyms.eng.m}</span>
         </p>
