@@ -32,11 +32,8 @@ export function CountryInfoProvider({ children }) {
         svg: "https://flagcdn.com/ng.svg",
         alt: "The flag of Nigeria is composed of three equal vertical bands of green, white and green.",
       },
-
       startOfWeek: "monday",
-      // REMEMBER TO DELETE THE LINE OF CODE BELOW
-      Date_Time: "2023-09-25 03:50:40",
-      date: "2023/09/21006",
+      date: "2023/09/25",
       time: "12 am",
     },
   ]);

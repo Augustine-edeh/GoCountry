@@ -70,23 +70,13 @@ const Home = (props) => {
               });
             }
           }
-          // checkTime();
 
-          // Time call function
-          // const checkTime = () => {
-          // fetch(
-          //   "https://timeapi.io/api/Time/current/coordinate?latitude=38.89&longitude=-77.05",
-          //   { mode: "no-cors" }
-          // )
+          //
           await fetch(
             `https://api.timezonedb.com/v2.1/get-time-zone?key=XN1YFKSTBENU&format=json&by=position&lat=${countryData[0].capitalInfo.latlng[0]}&lng=${countryData[0].capitalInfo.latlng[1]}`
           )
             .then((response) => response.json())
             .then((data) => {
-              // if (data.formatted.split(" ")[1].split(":")[0] > 12) {
-              // }
-              console.log(data.formatted.split(" ")[1].split(":")[0]);
-              console.log(data.formatted.split(" ")[1].split(":")[1]);
               const hour = data.formatted.split(" ")[1].split(":")[0];
               const minute = data.formatted.split(" ")[1].split(":")[1];
               // console.log(hour, minute);
@@ -109,55 +99,15 @@ const Home = (props) => {
                 const time12hr = `${hours12}:${minutes} ${period}`;
 
                 countryData[0].time = time12hr;
-                // console.log(time12hr);
-                // return time12hr;
               }
               convertTo12HourFormat(time24hr);
-
-              // Example usage:
-              // const time24hr = "14:30"; // Change this to the 24-hour time you want to convert
-              // const time12hr = convertTo12HourFormat(time24hr);
-              // console.log(time12hr); // Output: "2:30 pm"
-
-              console.log(data.formatted);
-              // console.log(data.formatted.split(" ")[1].split(":")[0]);
-
               countryData[0].date = data.formatted
                 .split(" ")[0]
                 .replace(/-/g, "/");
             });
 
-          // console.log(countryData);
-
-          // updateCountryInfo()
-          // };
-
-          // const url =
-          //   "https://timeapi.io/api/Time/current/coordinate?latitude=38.89&longitude=-77.05";
-
-          // await fetch(url, {
-          //   method: "GET",
-          //   mode: "no-cors",
-          // })
-          //   .then((response) => {
-          //     if (response.ok) {
-          //       console.log("Request was successful");
-          //     } else {
-          //       console.error(
-          //         "Request failed:",
-          //         response.status,
-          //         response.statusText
-          //       );
-          //     }
-          //   })
-          //   .catch((error) => {
-          //     console.error("Fetch API Error:", error);
-          //   });
-
           // UPDATING THE countryInfo CONTEXT
           updateCountryInfo(countryData);
-
-          // `https://timeapi.io/api/Time/current/coordinate?latitude=${countryData[0].capitalInfo.latlng[0]}&longitude=${countryData[0].capitalInfo.latlng[1]}`
 
           // PROGRAMMATICALLY NAVIGATING TO THE RESULT PAGE
           navigate("/GoCountry/country");
