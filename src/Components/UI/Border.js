@@ -6,7 +6,6 @@ import CountryNames from "../../CountriesCommonNameList/countryNames.json";
 import CountryInfoContext from "../../CountryInfoContext/CountryInfoContext";
 
 const Border = (props) => {
-  // console.log(props.loadState);
   // IMPORTING THE updateCountryInfo UPDATER FUNCTION
   const { updateCountryInfo } = useContext(CountryInfoContext);
 
@@ -14,32 +13,6 @@ const Border = (props) => {
   const navigate = useNavigate();
 
   const clickHandler = () => {
-    // const borderURL = `https://restcountries.com/v3.1/alpha/${props.border}`;
-    // fetch(borderURL)
-    //   .then((response) => {
-    //     // props.loadState(true);
-    //     // Checking if response status is successful
-    //     if (!response.ok) {
-    //       // Throwing error if response status is not successful
-    //       throw Error(response.statusText);
-    //     }
-    //     return response.json();
-    //   })
-    //   .then((countryData) => {
-    //     // UPDATING THE countryInfo CONTEXT
-    //     updateCountryInfo(countryData);
-    //     // TRIGER country name animation by 1st removing the animation class and re-adding it thereafter
-    //     document.querySelector(".Country-Name").classList.remove("slide-right");
-    //     // Simulating a delay before re-adding the animation class
-    //     setTimeout(
-    //       () =>
-    //         document
-    //           .querySelector(".Country-Name")
-    //           .classList.add("slide-right"),
-    //       1
-    //     );
-    //   });
-
     // || NEW FETCH CALL: ASYNC
     async function fetchData(props) {
       const borderURL = `https://restcountries.com/v3.1/alpha/${props.border}`;
@@ -55,9 +28,6 @@ const Border = (props) => {
 
         const countryData = await response.json();
 
-        // // UPDATING THE countryInfo CONTEXT
-        // updateCountryInfo(countryData);
-
         // TRIGGER country name animation
         const countryNameElement = document.querySelector(".Country-Name");
         countryNameElement.classList.remove("slide-right");
@@ -67,13 +37,8 @@ const Border = (props) => {
         )
           .then((response) => response.json())
           .then((data) => {
-            // if (data.formatted.split(" ")[1].split(":")[0] > 12) {
-            // }
-            console.log(data.formatted.split(" ")[1].split(":")[0]);
-            console.log(data.formatted.split(" ")[1].split(":")[1]);
             const hour = data.formatted.split(" ")[1].split(":")[0];
             const minute = data.formatted.split(" ")[1].split(":")[1];
-            // console.log(hour, minute);
             const time24hr = `${hour}:${minute}`;
 
             function convertTo12HourFormat(time_24hr) {
@@ -93,18 +58,8 @@ const Border = (props) => {
               const time12hr = `${hours12}:${minutes} ${period}`;
 
               countryData[0].time = time12hr;
-              // console.log(time12hr);
-              // return time12hr;
             }
             convertTo12HourFormat(time24hr);
-
-            // Example usage:
-            // const time24hr = "14:30"; // Change this to the 24-hour time you want to convert
-            // const time12hr = convertTo12HourFormat(time24hr);
-            // console.log(time12hr); // Output: "2:30 pm"
-
-            console.log(data.formatted);
-            // console.log(data.formatted.split(" ")[1].split(":")[0]);
 
             countryData[0].date = data.formatted
               .split(" ")[0]

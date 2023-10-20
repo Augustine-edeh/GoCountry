@@ -63,7 +63,7 @@ function App() {
       </Link>
       <ThemeToggler />
       <main className="App-main">
-        <Title />
+        <Title>Country-search-App</Title>
         <CountryInfoProvider>
           <Routes>
             <Route
