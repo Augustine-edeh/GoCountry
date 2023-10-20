@@ -44,36 +44,9 @@ function App() {
     setHttpErrorMessage(err);
   };
 
-  // const Backdrop = () => {
-  //   return (
-  //     <Backdrop
-  //       sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
-  //       open
-  //     >
-  //       <CircularProgress color="inherit" />
-  //     </Backdrop>
-  //   )
-  // }
-
   return (
     <div className="App">
-      {isLoading ? (
-        <LoadingSpinner />
-      ) : (
-        // ? ReactDOM.createPortal(
-        //     <Backdrop />,
-        //     document.getElementById("backdrop-root")
-        //   )
-        // ReactDOM.createPortal(<Backdrop />, document.getElementById('backdrop-root'))
-
-        // <Backdrop
-        //   sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
-        //   open
-        // >
-        //   <CircularProgress color="inherit" />
-        // </Backdrop>
-        ""
-      )}
+      {isLoading ? <LoadingSpinner /> : ""}
 
       <Link to="GoCountry/">
         <Header />
