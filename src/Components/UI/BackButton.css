@@ -20,7 +20,14 @@
 }
 .BackButton-container:focus,
 .BackButton-container:hover {
-  background: #b3aeae;
+  /* background: #b3aeae; */
+  background: green;
+}
+.BackButton:hover,
+.BackButton:focus {
+  /* border: 0.5rem solid red; */
+  /* outline: solid 15rem red; */
+  outline-offset: -0.15rem;
 }
 /* Mobile Responsiveness */
 @media only screen and (max-width: 768px) {

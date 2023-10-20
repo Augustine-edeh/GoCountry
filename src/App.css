@@ -1,12 +1,15 @@
 .App-main {
   /* FIXME: Use this color for dark mode */
-  max-height: 30rem;
+  /* max-height: 30rem; */
   margin: 1.5rem auto;
   min-height: 95vh;
-  width: 70rem;
-  background: #b0b0aa2a;
+  /* width: 70rem; */
+  width: fit-content;
+  background: red;
+  /* background: #b0b0aa2a; */
   border-radius: 0.8rem;
-  padding: 1rem 2rem;
+  /* padding: 1rem 20rem; */
+  padding: 0 4rem;
   display: grid;
   place-content: center;
   font-size: calc(10px + 2vmin);
@@ -21,6 +24,7 @@
 
 @media (min-width: 300px) and (max-width: 415px) {
   .App-main {
-    width: 20em;
+    /* padding: 0 15rem; */
+    /* width: 20em; */
   }
 }
