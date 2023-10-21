@@ -46,7 +46,7 @@ function App() {
 
   return (
     <div className="App">
-      {isLoading ? <LoadingSpinner /> : ""}
+      {isLoading && <LoadingSpinner />}
 
       <Link to="GoCountry/">
         <Header />
