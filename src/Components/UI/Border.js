@@ -1,13 +1,13 @@
 import "./Border.css";
-import { useContext } from "react";
+// import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import CountryNames from "../../CountriesCommonNameList/countryNames.json";
 //  IMPORTING THE CountryInfo CONTEXT
-import CountryInfoContext from "../../CountryInfoContext/CountryInfoContext";
+// import CountryInfoContext from "../../CountryInfoContext/CountryInfoContext";
 
 const Border = (props) => {
   // IMPORTING THE updateCountryInfo UPDATER FUNCTION
-  const { updateCountryInfo } = useContext(CountryInfoContext);
+  // const { updateCountryInfo } = useContext(CountryInfoContext);
 
   // ASSIGNING THE useNavugate HOOK
   const navigate = useNavigate();
@@ -66,7 +66,8 @@ const Border = (props) => {
               .replace(/-/g, "/");
           });
         // UPDATING THE countryInfo CONTEXT
-        updateCountryInfo(countryData);
+        // updateCountryInfo(countryData);
+        sessionStorage.setItem("Country-Info", JSON.stringify(countryData));
         // Simulate a delay before re-adding the animation class
         await new Promise((resolve) => setTimeout(resolve, 1));
 
