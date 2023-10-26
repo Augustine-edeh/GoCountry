@@ -1,16 +1,10 @@
 //  IMPORTING useContext HOOK
-import { useContext, useEffect } from "react";
-// IMPORTING THE CountryInfo CONTEXT
-// import CountryInfoContext from "../../CountryInfoContext/CountryInfoContext";
 import CountryNames from "../../CountriesCommonNameList/countryNames.json";
 import "./Country.css";
 import Border from "./Border";
 import BackButton from "./BackButton";
 
 const Country = (props) => {
-  // const { countryInfo } = useContext(CountryInfoContext);
-
-  // const countryData = countryInfo[0];
   const countryData1 = JSON.parse(sessionStorage.getItem("Country-Info"))[0];
 
   let currencyString;
@@ -30,7 +24,6 @@ const Country = (props) => {
       <BackButton />
       <section className="Country-Name_container">
         <h1 className="Country-Name slide-right">
-          {/* <span>{countryData.name.common.toUpperCase()}</span> */}
           <span>{countryData1.name.common.toUpperCase()}</span>
         </h1>
       </section>
