@@ -1,14 +1,14 @@
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 //  IMPORTING THE CountryInfo CONTEXT
-import CountryInfoContext from "../../CountryInfoContext/CountryInfoContext";
+// import CountryInfoContext from "../../CountryInfoContext/CountryInfoContext";
 import "./Home.css";
 
 const Home = (props) => {
   const [countryValue, setcountryValue] = useState("");
 
   // IMPORTING THE updateCountryInfo UPDATER FUNCTION
-  const { updateCountryInfo } = useContext(CountryInfoContext);
+  // const { updateCountryInfo } = useContext(CountryInfoContext);
 
   const [isSearchInputEmpty, setIsSearchInputEmpty] = useState(false);
 
@@ -71,7 +71,7 @@ const Home = (props) => {
             }
           }
 
-          //
+          // || FETCHING TIME
           await fetch(
             `https://api.timezonedb.com/v2.1/get-time-zone?key=XN1YFKSTBENU&format=json&by=position&lat=${countryData[0].capitalInfo.latlng[0]}&lng=${countryData[0].capitalInfo.latlng[1]}`
           )
@@ -107,7 +107,10 @@ const Home = (props) => {
             });
 
           // UPDATING THE countryInfo CONTEXT
-          updateCountryInfo(countryData);
+          // updateCountryInfo(countryData);
+          sessionStorage.setItem("Country-Info", JSON.stringify(countryData));
+          const storedData = localStorage.getItem("Country-Info");
+          console.log(storedData);
 
           // PROGRAMMATICALLY NAVIGATING TO THE RESULT PAGE
           navigate("/GoCountry/country");

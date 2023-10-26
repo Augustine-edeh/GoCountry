@@ -1,11 +1,11 @@
 // IMPORTING THE Routes & Route COMPONENTS
 import { Routes, Route, Link, Navigate } from "react-router-dom";
 // IMPORTING useContext HOOK
-import { useContext, useState } from "react";
+import { useState } from "react";
 //  IMPORTING THE CountryInfo CONTEXT
-import CountryInfoContext from "./CountryInfoContext/CountryInfoContext";
+// import CountryInfoContext from "./CountryInfoContext/CountryInfoContext";
 // IMPORTING THE CountryInfo-Context-Provider
-import { CountryInfoProvider } from "./CountryInfoContext/CountryInfoContext";
+// import { CountryInfoProvider } from "./CountryInfoContext/CountryInfoContext";
 // || IMPORTING THE THEMETOGGLER COMPONENT
 import ThemeToggler from "./Components/UI/ThemeToggler";
 import "./App.css";
@@ -20,7 +20,7 @@ import HttpError from "./Components/UI/HttpError";
 import LoadingSpinner from "./Components/Portal/LoadingSpinner";
 
 function App() {
-  const { countryInfo } = useContext(CountryInfoContext);
+  // const { countryInfo } = useContext(CountryInfoContext);
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -46,7 +46,7 @@ function App() {
 
   return (
     <div className="App">
-      {isLoading ? <LoadingSpinner /> : ""}
+      {isLoading && <LoadingSpinner />}
 
       <Link to="GoCountry/">
         <Header />
@@ -54,40 +54,40 @@ function App() {
       <ThemeToggler />
       <main className="App-main">
         <Title>Country-search-App</Title>
-        <CountryInfoProvider>
-          <Routes>
-            <Route
-              path="GoCountry/"
-              element={
-                <Home
-                  updateIsLoading={updateIsLoadingHandler}
-                  changeErrorMessage={changeErrorMessageHandler}
-                />
-              }
-            />
-            <Route
-              path="countries-search-app"
-              element={<Navigate to="/GoCountry" />}
-            />
+        {/* <CountryInfoProvider> */}
+        <Routes>
+          <Route
+            path="GoCountry/"
+            element={
+              <Home
+                updateIsLoading={updateIsLoadingHandler}
+                changeErrorMessage={changeErrorMessageHandler}
+              />
+            }
+          />
+          <Route
+            path="countries-search-app"
+            element={<Navigate to="/GoCountry" />}
+          />
 
-            <Route
-              path="GoCountry/country"
-              element={
-                <Country
-                  updateIsLoading={updateIsLoadingHandler}
-                  nation={countryInfo}
-                />
-              }
-            />
+          <Route
+            path="GoCountry/country"
+            element={
+              <Country
+                updateIsLoading={updateIsLoadingHandler}
+                // nation={countryInfo}
+              />
+            }
+          />
 
-            <Route
-              path="/GoCountry/error"
-              element={<HttpError ErrorMessage={HttpErrorMessage} />}
-            />
+          <Route
+            path="/GoCountry/error"
+            element={<HttpError ErrorMessage={HttpErrorMessage} />}
+          />
 
-            <Route path="*" element={<Page404 />} />
-          </Routes>
-        </CountryInfoProvider>
+          <Route path="*" element={<Page404 />} />
+        </Routes>
+        {/* </CountryInfoProvider> */}
       </main>
 
       <Footer />
