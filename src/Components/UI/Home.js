@@ -15,6 +15,7 @@ const Home = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
+    document.activeElement.blur();
 
     // CHEECKING IF countryValue IS NOT EMPTY
     if (countryValue.trim().length === 0) {
