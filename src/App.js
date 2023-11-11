@@ -1,6 +1,6 @@
 // IMPORTING THE Routes & Route COMPONENTS
 import { Routes, Route, Link, Navigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 // || IMPORTING THE THEMETOGGLER COMPONENT
 import ThemeToggler from "./Components/UI/ThemeToggler";
 import "./App.css";
@@ -58,10 +58,7 @@ function App() {
               />
             }
           />
-          {/* <Route
-            path="countries-search-app"
-            element={<Navigate to="/GoCountry" />}
-          /> */}
+          <Route path="/" element={<Navigate to="/GoCountry" />} />
           {console.log("Hey")}
 
           <Route
