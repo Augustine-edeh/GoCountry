@@ -49,6 +49,7 @@ function App() {
         <Title>Country-search-App</Title>
         <Routes>
           <Route
+            index
             path="GoCountry/"
             element={
               <Home
@@ -57,10 +58,11 @@ function App() {
               />
             }
           />
-          <Route
+          {/* <Route
             path="countries-search-app"
             element={<Navigate to="/GoCountry" />}
-          />
+          /> */}
+          {console.log("Hey")}
 
           <Route
             path="GoCountry/country"
