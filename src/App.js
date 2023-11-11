@@ -59,7 +59,6 @@ function App() {
             }
           />
           <Route path="/" element={<Navigate to="/GoCountry" />} />
-          {console.log("Hey")}
 
           <Route
             path="GoCountry/country"
