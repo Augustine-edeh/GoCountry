@@ -1,11 +1,6 @@
 // IMPORTING THE Routes & Route COMPONENTS
 import { Routes, Route, Link, Navigate } from "react-router-dom";
-// IMPORTING useContext HOOK
 import { useState } from "react";
-//  IMPORTING THE CountryInfo CONTEXT
-// import CountryInfoContext from "./CountryInfoContext/CountryInfoContext";
-// IMPORTING THE CountryInfo-Context-Provider
-// import { CountryInfoProvider } from "./CountryInfoContext/CountryInfoContext";
 // || IMPORTING THE THEMETOGGLER COMPONENT
 import ThemeToggler from "./Components/UI/ThemeToggler";
 import "./App.css";
@@ -20,8 +15,6 @@ import HttpError from "./Components/UI/HttpError";
 import LoadingSpinner from "./Components/Portal/LoadingSpinner";
 
 function App() {
-  // const { countryInfo } = useContext(CountryInfoContext);
-
   const [isLoading, setIsLoading] = useState(false);
 
   function updateIsLoadingHandler(load) {
@@ -54,7 +47,6 @@ function App() {
       <ThemeToggler />
       <main className="App-main">
         <Title>Country-search-App</Title>
-        {/* <CountryInfoProvider> */}
         <Routes>
           <Route
             path="GoCountry/"
@@ -72,12 +64,7 @@ function App() {
 
           <Route
             path="GoCountry/country"
-            element={
-              <Country
-                updateIsLoading={updateIsLoadingHandler}
-                // nation={countryInfo}
-              />
-            }
+            element={<Country updateIsLoading={updateIsLoadingHandler} />}
           />
 
           <Route
@@ -87,7 +74,6 @@ function App() {
 
           <Route path="*" element={<Page404 />} />
         </Routes>
-        {/* </CountryInfoProvider> */}
       </main>
 
       <Footer />

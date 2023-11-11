@@ -1,14 +1,9 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-//  IMPORTING THE CountryInfo CONTEXT
-// import CountryInfoContext from "../../CountryInfoContext/CountryInfoContext";
 import "./Home.css";
 
 const Home = (props) => {
   const [countryValue, setcountryValue] = useState("");
-
-  // IMPORTING THE updateCountryInfo UPDATER FUNCTION
-  // const { updateCountryInfo } = useContext(CountryInfoContext);
 
   const [isSearchInputEmpty, setIsSearchInputEmpty] = useState(false);
 
@@ -55,7 +50,6 @@ const Home = (props) => {
 
           // IF HTTP REQUEST RETURNS MORE THAN ONE DATA ARRAY
           if (countryData.length > 1) {
-            // console.log(countryData[0].name.common);
             const filteredData = countryData.filter(
               (country) =>
                 country.name.common.toLowerCase() ===
@@ -79,7 +73,6 @@ const Home = (props) => {
             .then((data) => {
               const hour = data.formatted.split(" ")[1].split(":")[0];
               const minute = data.formatted.split(" ")[1].split(":")[1];
-              // console.log(hour, minute);
               const time24hr = `${hour}:${minute}`;
 
               function convertTo12HourFormat(time_24hr) {
@@ -106,8 +99,6 @@ const Home = (props) => {
                 .replace(/-/g, "/");
             });
 
-          // UPDATING THE countryInfo CONTEXT
-          // updateCountryInfo(countryData);
           sessionStorage.setItem("Country-Info", JSON.stringify(countryData));
           const storedData = localStorage.getItem("Country-Info");
           console.log(storedData);
